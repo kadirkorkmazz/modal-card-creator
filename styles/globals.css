@@ -6,6 +6,15 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  max-width: 1680px;
+
+  @apply font-sans mx-auto;
+}
+
+.forGradientBG {
+  background: linear-gradient(
+    239.75deg,
+    rgba(255, 255, 255, 0.7) 1.2%,
+    rgba(255, 255, 255, 0) 70.51%
+  );
 }
