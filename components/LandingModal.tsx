@@ -1,6 +1,7 @@
 import React from 'react';
 import landingModalImage from '../public/landing-modal-image.png';
 import Image from 'next/image';
+import LandingModalShadow from './LandingModalShadow';
 
 function LandingModal() {
   return (
@@ -60,6 +61,7 @@ function LandingModal() {
           </svg>
         </button>
       </div>
+      <LandingModalShadow />
     </div>
   );
 }

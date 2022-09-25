@@ -6,7 +6,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  max-width: 1680px;
 
   @apply font-sans mx-auto;
 }
@@ -17,4 +16,10 @@ body {
     rgba(255, 255, 255, 0.7) 1.2%,
     rgba(255, 255, 255, 0) 70.51%
   );
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4; /* bu */
+  }
 }

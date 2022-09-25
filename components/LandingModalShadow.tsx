@@ -2,7 +2,7 @@ import React from 'react';
 
 function LandingModalShadow() {
   return (
-    <div className=" w-[500px] h-[315px] rounded-t-[40px] absolute left-[700px] -mt-[315px] forGradientBG ">
+    <div className=" w-[500px] h-[315px] rounded-t-[40px] absolute right-[-330px] top-[-88px]  forGradientBG ">
       <div className="w-[182px] h-[48px] bg-white rounded-xl flex text-center justify-center items-center z-10 absolute left-[114px] bottom-[73px]">
         <svg
           className="mr-2"
