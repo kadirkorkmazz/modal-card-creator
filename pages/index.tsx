@@ -19,14 +19,14 @@ const Home: NextPage = () => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main>
-          <div className="bgliustkisim  mx-auto bg-gradient-to-t from-[#E3F2F7] to-white h-[910px]">
-            <div className="bgliustkisimicerik w-full max-w-screen-xl mt-4 bg-transparent mx-auto h-[910px]">
+          <div className="bgliustkisim  mx-auto bg-gradient-to-t from-[#E3F2F7] to-white h-[56.87rem]">
+            <div className="bgliustkisimicerik w-full max-w-screen-xl mt-4 bg-transparent mx-auto h-[56.87rem]">
               <Navbar />
               <LandingTop />
             </div>
           </div>
-          <div className=" bg-[#666666] h-[630px] mx-auto">
-            <div className=" w-full secondArea h-[630px] max-w-screen-xl mx-auto">
+          <div className=" bg-[#666666] h-[39.37rem] mx-auto">
+            <div className=" w-full secondArea h-[39.37rem] max-w-screen-xl mx-auto">
               <LandingBottom />
             </div>
           </div>

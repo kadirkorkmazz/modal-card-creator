@@ -6,8 +6,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-
-  @apply font-sans mx-auto;
+  @apply font-poppins mx-auto;
 }
 
 .forGradientBG {
@@ -19,7 +18,18 @@ body {
 }
 
 @layer components {
-  .container {
-    @apply mx-auto px-4; /* bu */
+  .questionDiv {
+    @apply flex items-center justify-between w-full;
+  }
+  .questionContent {
+    @apply h-[177px] flex px-7 py-6 border-t border-t-gray-200 flex-col bg-neutral-100 transition-all duration-300 hover:cursor-pointer;
+  }
+
+  .question {
+    @apply h-20 flex px-7 py-6 border-t border-t-gray-200 flex-col transition-all duration-300 hover:cursor-pointer;
+  }
+
+  .questionTitle {
+    @apply font-semibold text-lg text-neutral-500;
   }
 }

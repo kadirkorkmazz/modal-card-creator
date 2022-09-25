@@ -11,27 +11,21 @@ function Faq() {
   };
 
   return (
-    <div className="font-poppins my-14 mb-14 container mx-auto ">
+    <div className="my-14 mb-14 container mx-auto ">
       <h1 className=" font-semibold text-4xl mb-12 text-center">
         Frequently Asked Questions
       </h1>
       <div className="questionArea">
         <div
-          className={
-            selected === 1
-              ? 'questionItem h-[177px] flex px-7 py-6 border-t border-t-gray-200 flex-col bg-neutral-100 transition-all duration-300 hover:cursor-pointer'
-              : 'questionItem h-20 flex px-7 py-6 border-t border-t-gray-200 flex-col transition-all duration-300 hover:cursor-pointer'
-          }
+          className={selected === 1 ? ' questionContent' : ' question'}
           onClick={() => {
             toggle(1);
           }}
         >
-          <div className="flex items-center justify-between w-full ">
+          <div className="questionDiv ">
             <h3
               className={
-                selected === 1
-                  ? ' font-semibold text-lg text-black'
-                  : ' font-semibold text-lg text-neutral-500'
+                selected === 1 ? 'questionTitle text-black' : 'questionTitle'
               }
             >
               How do I pay for the essentials or premium plan?
@@ -72,7 +66,7 @@ function Faq() {
               </svg>
             )}
           </div>
-          <div className="w-[850px] h-20">
+          <div className="w-full max-w-[53.1rem] h-20">
             <p
               className={selected === 1 ? 'w-full mt-5 ' : 'w-full mt-5 hidden'}
             >
@@ -85,23 +79,17 @@ function Faq() {
           </div>
         </div>
 
-        {/* <-- Rest of the questions --> */}
+        {/* <-- Q-Divider --> */}
         <div
-          className={
-            selected === 2
-              ? 'questionItem h-[177px] flex px-7 py-6 border-t border-t-gray-200 flex-col bg-neutral-100 transition-all duration-300 hover:cursor-pointer '
-              : 'questionItem h-20 flex px-7 py-6 border-t border-t-gray-200 flex-col transition-all duration-300 hover:cursor-pointer'
-          }
+          className={selected === 2 ? ' questionContent ' : ' question'}
           onClick={() => {
             toggle(2);
           }}
         >
-          <div className="flex items-center justify-between w-full">
+          <div className="questionDiv">
             <h3
               className={
-                selected === 2
-                  ? ' font-semibold text-lg text-black'
-                  : ' font-semibold text-lg text-neutral-500'
+                selected === 2 ? 'questionTitle text-black' : 'questionTitle'
               }
             >
               Can I cancel my essentials or premium plan subscription at my
@@ -143,7 +131,7 @@ function Faq() {
               </svg>
             )}
           </div>
-          <div className="w-[850px] h-20">
+          <div className="w-full max-w-[53.1rem] h-20">
             <p
               className={selected === 2 ? 'w-full mt-5' : 'w-full mt-5 hidden'}
             >
@@ -155,23 +143,17 @@ function Faq() {
             </p>
           </div>
         </div>
-        {/* <-- Rest of the questions --> */}
+        {/* <-- Q-Divider --> */}
         <div
-          className={
-            selected === 3
-              ? 'questionItem h-[177px] flex px-7 py-6 border-t border-t-gray-200 flex-col bg-neutral-100 transition-all duration-300 hover:cursor-pointer'
-              : 'questionItem h-20 flex px-7 py-6 border-t border-t-gray-200 flex-col transition-all duration-300 hover:cursor-pointer'
-          }
+          className={selected === 3 ? ' questionContent' : ' question'}
           onClick={() => {
             toggle(3);
           }}
         >
-          <div className="flex items-center justify-between w-full">
+          <div className="questionDiv">
             <h3
               className={
-                selected === 3
-                  ? ' font-semibold text-lg text-black'
-                  : ' font-semibold text-lg text-neutral-500'
+                selected === 3 ? 'questionTitle text-black' : 'questionTitle'
               }
             >
               How do I pay for the essentials or premium plan?
@@ -212,7 +194,7 @@ function Faq() {
               </svg>
             )}
           </div>
-          <div className="w-[850px] h-20">
+          <div className="w-full max-w-[53.1rem] h-20">
             <p
               className={selected === 3 ? 'w-full mt-5' : 'w-full mt-5 hidden'}
             >
@@ -224,23 +206,17 @@ function Faq() {
             </p>
           </div>
         </div>
-        {/* <-- Rest of the questions --> */}
+        {/* <-- Q-Divider --> */}
         <div
-          className={
-            selected === 4
-              ? 'questionItem h-[177px] flex px-7 py-6 border-t border-t-gray-200 flex-col bg-neutral-100 transition-all duration-300 hover:cursor-pointer'
-              : 'questionItem h-20 flex px-7 py-6 border-t border-t-gray-200 flex-col transition-all duration-300 hover:cursor-pointer'
-          }
+          className={selected === 4 ? ' questionContent' : ' question'}
           onClick={() => {
             toggle(4);
           }}
         >
-          <div className="flex items-center justify-between w-full">
+          <div className="questionDiv">
             <h3
               className={
-                selected === 4
-                  ? ' font-semibold text-lg text-black'
-                  : ' font-semibold text-lg text-neutral-500'
+                selected === 4 ? 'questionTitle text-black' : 'questionTitle'
               }
             >
               We need to add new users to our team, how will that be billed?
@@ -281,7 +257,7 @@ function Faq() {
               </svg>
             )}
           </div>
-          <div className="w-[850px] h-20">
+          <div className="w-full max-w-[53.1rem] h-20">
             <p
               className={selected === 4 ? 'w-full mt-5' : 'w-full mt-5 hidden'}
             >
@@ -293,23 +269,17 @@ function Faq() {
             </p>
           </div>
         </div>
-        {/* <-- Rest of the questions --> */}
+        {/* <-- Q-Divider --> */}
         <div
-          className={
-            selected === 5
-              ? 'questionItem h-[177px] flex px-7 py-6 border-t border-t-gray-200 flex-col bg-neutral-100 transition-all duration-300 hover:cursor-pointer'
-              : 'questionItem h-20 flex px-7 py-6 border-t border-t-gray-200 flex-col transition-all duration-300 hover:cursor-pointer'
-          }
+          className={selected === 5 ? ' questionContent' : ' question'}
           onClick={() => {
             toggle(5);
           }}
         >
-          <div className="flex items-center justify-between w-full">
+          <div className="questionDiv">
             <h3
               className={
-                selected === 5
-                  ? ' font-semibold text-lg text-black'
-                  : ' font-semibold text-lg text-neutral-500'
+                selected === 5 ? 'questionTitle text-black' : 'questionTitle'
               }
             >
               How do I pay for the essentials or premium plan?
@@ -350,7 +320,7 @@ function Faq() {
               </svg>
             )}
           </div>
-          <div className="w-[850px] h-20">
+          <div className="w-full max-w-[53.1rem] h-20">
             <p
               className={selected === 5 ? 'w-full mt-5' : 'w-full mt-5 hidden'}
             >
@@ -362,24 +332,22 @@ function Faq() {
             </p>
           </div>
         </div>
-        {/* <-- Rest of the questions --> */}
+        {/* <-- Q-Divider --> */}
 
         <div
           className={
             selected === 6
-              ? 'questionItem h-[177px] flex px-7 py-6 border-t border-t-gray-200 border-b border-b-gray-200 flex-col bg-neutral-100 transition-all duration-300 hover:cursor-pointer'
-              : 'questionItem h-20 flex px-7 py-6 border-t border-t-gray-200 border-b border-b-gray-200 flex-col transition-all duration-300 hover:cursor-pointer'
+              ? ' questionContent border-b border-b-gray-200'
+              : ' question border-b border-b-gray-200 '
           }
           onClick={() => {
             toggle(6);
           }}
         >
-          <div className="flex items-center justify-between w-full">
+          <div className="questionDiv">
             <h3
               className={
-                selected === 6
-                  ? ' font-semibold text-lg text-black'
-                  : ' font-semibold text-lg text-neutral-500'
+                selected === 6 ? 'questionTitle text-black' : 'questionTitle'
               }
             >
               Can I cancel my essentials or premium plan subscription at my
@@ -421,7 +389,7 @@ function Faq() {
               </svg>
             )}
           </div>
-          <div className="w-[850px] h-20">
+          <div className="w-full max-w-[53.1rem] h-20">
             <p
               className={selected === 6 ? 'w-full mt-5' : 'w-full mt-5 hidden'}
             >

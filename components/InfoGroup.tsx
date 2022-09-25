@@ -8,7 +8,7 @@ function InfoGroup() {
       </h1>
 
       <div className="flex">
-        <div className="w-[378px] h-[267px] bg-neutral-100 flex flex-col p-12 items-center rounded-xl mr-8">
+        <div className="w-[23.6rem] h-[16.6rem] bg-neutral-100 flex flex-col p-12 items-center rounded-xl mr-8">
           <svg
             width="48"
             height="48"
@@ -33,7 +33,7 @@ function InfoGroup() {
             Helps you calculate your email marketing roi to measure success.
           </p>
         </div>
-        <div className="w-[378px] h-[267px] bg-neutral-100 flex flex-col py-12 px-24 items-center rounded-xl mr-8">
+        <div className="w-[23.6rem] h-[16.6rem] bg-neutral-100 flex flex-col py-12 px-24 items-center rounded-xl mr-8">
           <svg
             width="48"
             height="48"
@@ -54,7 +54,7 @@ function InfoGroup() {
             subject line.
           </p>
         </div>
-        <div className="w-[378px] h-[267px] bg-neutral-100 flex flex-col py-12 px-20 items-center rounded-xl mr-8">
+        <div className="w-[23.6rem] h-[16.6rem] bg-neutral-100 flex flex-col py-12 px-20 items-center rounded-xl mr-8">
           <svg
             width="48"
             height="48"

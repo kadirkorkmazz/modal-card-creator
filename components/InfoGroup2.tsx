@@ -31,7 +31,7 @@ function InfoGroup2() {
           <h5 className=" text-lg font-semibold mb-2.5 mt-7 text-center">
             Targeting Options
           </h5>
-          <p className=" text-sm text-center max-w-[220px]">
+          <p className=" text-sm text-center max-w-[13.75rem]">
             Target +26 trigger to your visitors
           </p>
         </div>
@@ -56,7 +56,7 @@ function InfoGroup2() {
           <h5 className=" text-lg font-semibold mb-2.5 mt-7 text-center">
             No Code
           </h5>
-          <p className=" text-sm text-center max-w-[220px]">
+          <p className=" text-sm text-center max-w-[13.75rem]">
             No code required while you’re creating a popup
           </p>
         </div>
@@ -89,7 +89,7 @@ function InfoGroup2() {
           <h5 className=" text-lg font-semibold mb-2.5 mt-7 text-center">
             Targeting Options
           </h5>
-          <p className=" text-sm text-center max-w-[220px]">
+          <p className=" text-sm text-center max-w-[13.75rem]">
             Integrated with your marketing and CRM platforms
           </p>
         </div>
@@ -118,7 +118,7 @@ function InfoGroup2() {
           <h5 className=" text-lg font-semibold mb-2.5 mt-7 text-center">
             Targeting Options
           </h5>
-          <p className=" text-sm text-center max-w-[220px]">
+          <p className=" text-sm text-center max-w-[13.75rem]">
             Don’t worry about speed and Amazon AWS resources
           </p>
         </div>

@@ -5,7 +5,7 @@ function LandingBottom() {
   return (
     <div className="container mx-auto font-poppins ">
       <LandingModal />
-      <div className=" relative top-[361px] flex text-white mx-auto">
+      <div className=" relative top-[22.5rem] flex text-white mx-auto">
         <div className=" mr-32">
           <div className=" text-7xl font-semibold mb-4">3x</div>
           <div>

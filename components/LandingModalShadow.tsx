@@ -2,8 +2,8 @@ import React from 'react';
 
 function LandingModalShadow() {
   return (
-    <div className=" w-[500px] h-[315px] rounded-t-[40px] absolute right-[-330px] top-[-88px]  forGradientBG ">
-      <div className="w-[182px] h-[48px] bg-white rounded-xl flex text-center justify-center items-center z-10 absolute left-[114px] bottom-[73px]">
+    <div className=" w-[31.25rem] h-[19.68rem] rounded-t-[2.5rem] absolute right-[-20.62rem] top-[-5.5rem] forGradientBG ">
+      <div className="w-[11.37rem] h-12 bg-white rounded-xl flex text-center justify-center items-center z-10 absolute left-[7.12rem] bottom-[4.5rem]">
         <svg
           className="mr-2"
           width="24"
@@ -27,7 +27,7 @@ function LandingModalShadow() {
         <p className=" font-medium">Grow email list</p>
       </div>
 
-      <div className="w-[269px] h-[48px] bg-white opacity-75 rounded-xl flex items-center justify-center absolute left-[99px] bottom-[15px] z-10 ">
+      <div className="w-[16.81rem] h-12 bg-white opacity-75 rounded-xl flex items-center justify-center absolute left-[6.18rem] bottom-4 z-10 ">
         <svg
           className="mr-2 "
           width="24"

@@ -4,7 +4,7 @@ import logo from '../public/Logo.svg';
 
 function Navbar() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto font-sans">
       <div className="navbar flex items-center ">
         <div className="flex items-center w-2/12">
           <Image src={logo} width={50} height={50} alt="logo" />
