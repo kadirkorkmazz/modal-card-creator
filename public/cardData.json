@@ -1,0 +1,216 @@
+[
+  {
+    "id": 1,
+    "name": "card1",
+    "image": "./CardImg/card1.png"
+  },
+
+  {
+    "id": 2,
+    "name": "card2",
+    "image": "./CardImg/card2.png"
+  },
+  {
+    "id": 3,
+    "name": "card3",
+    "image": "./CardImg/card3.png"
+  },
+
+  {
+    "id": 4,
+    "name": "card4",
+    "image": "./CardImg/card4.png"
+  },
+
+  {
+    "id": 5,
+    "name": "card5",
+    "image": "./CardImg/card5.png"
+  },
+
+  {
+    "id": 6,
+    "name": "card6",
+    "image": "./CardImg/card6.png"
+  },
+
+  {
+    "id": 7,
+    "name": "card7",
+    "image": "./CardImg/card7.png"
+  },
+
+  {
+    "id": 8,
+    "name": "card8",
+    "image": "./CardImg/card8.png"
+  },
+
+  {
+    "id": 9,
+    "name": "card9",
+    "image": "./CardImg/card9.png"
+  },
+
+  {
+    "id": 10,
+    "name": "card10",
+    "image": "./CardImg/card10.png"
+  },
+
+  {
+    "id": 11,
+    "name": "card11",
+    "image": "./CardImg/card11.png"
+  },
+
+  {
+    "id": 12,
+    "name": "card12",
+    "image": "./CardImg/card12.png"
+  },
+
+  {
+    "id": 13,
+    "name": "card13",
+    "image": "./CardImg/card13.png"
+  },
+
+  {
+    "id": 14,
+    "name": "card14",
+    "image": "./CardImg/card14.png"
+  },
+
+  {
+    "id": 15,
+    "name": "card15",
+    "image": "./CardImg/card15.png"
+  },
+
+  {
+    "id": 16,
+    "name": "card16",
+    "image": "./CardImg/card16.png"
+  },
+
+  {
+    "id": 17,
+    "name": "card17",
+    "image": "./CardImg/card17.png"
+  },
+
+  {
+    "id": 18,
+    "name": "card18",
+    "image": "./CardImg/card18.png"
+  },
+
+  {
+    "id": 19,
+    "name": "card19",
+    "image": "./CardImg/card19.png"
+  },
+
+  {
+    "id": 20,
+    "name": "card20",
+    "image": "./CardImg/card20.png"
+  },
+
+  {
+    "id": 21,
+    "name": "card21",
+    "image": "./CardImg/card21.png"
+  },
+
+  {
+    "id": 22,
+    "name": "card22",
+    "image": "./CardImg/card22.png"
+  },
+
+  {
+    "id": 23,
+    "name": "card23",
+    "image": "./CardImg/card23.png"
+  },
+
+  {
+    "id": 24,
+    "name": "card24",
+    "image": "./CardImg/card24.png"
+  },
+
+  {
+    "id": 25,
+    "name": "card25",
+    "image": "./CardImg/card25.png"
+  },
+
+  {
+    "id": 26,
+    "name": "card26",
+    "image": "./CardImg/card26.png"
+  },
+
+  {
+    "id": 27,
+    "name": "card27",
+    "image": "./CardImg/card27.png"
+  },
+
+  {
+    "id": 28,
+    "name": "card28",
+    "image": "./CardImg/card28.png"
+  },
+
+  {
+    "id": 29,
+    "name": "card29",
+    "image": "./CardImg/card29.png"
+  },
+
+  {
+    "id": 30,
+    "name": "card30",
+    "image": "./CardImg/card30.png"
+  },
+
+  {
+    "id": 31,
+    "name": "card31",
+    "image": "./CardImg/card31.png"
+  },
+
+  {
+    "id": 32,
+    "name": "card32",
+    "image": "./CardImg/card32.png"
+  },
+
+  {
+    "id": 33,
+    "name": "card33",
+    "image": "./CardImg/card33.png"
+  },
+
+  {
+    "id": 34,
+    "name": "card34",
+    "image": "./CardImg/card34.png"
+  },
+
+  {
+    "id": 35,
+    "name": "card35",
+    "image": "./CardImg/card35.png"
+  },
+
+  {
+    "id": 36,
+    "name": "card36",
+    "image": "./CardImg/card36.png"
+  }
+]
