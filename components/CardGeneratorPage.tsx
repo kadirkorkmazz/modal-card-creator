@@ -2,6 +2,7 @@ import React from 'react';
 import Appearance from './Appearance';
 import ChooseYourTemplate from './ChooseYourTemplate';
 import Content from './Content';
+import SettingsAndCode from './SettingsAndCode';
 import TargetingRules from './TargetingRules';
 
 function CardGeneratorPage() {
@@ -20,6 +21,7 @@ function CardGeneratorPage() {
         <Appearance />
         <Content />
         <TargetingRules />
+        <SettingsAndCode />
       </div>
     </div>
   );

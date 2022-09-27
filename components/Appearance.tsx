@@ -8,7 +8,7 @@ function Appearance() {
   const [color, setColor] = useState('black');
 
   return (
-    <div className="flex items-start mt-14 pt-14 mb-14">
+    <div className="flex items-start mt-16 mb-14">
       <div className="w-96 mr-20 ">
         <div className=" flex items-center gap-4 mb-4 pb-4">
           <span className="font-semibold bg-gray-200 w-9 h-9 flex justify-center items-center rounded-full">
@@ -26,7 +26,7 @@ function Appearance() {
           {Array.apply(0, Array(3)).map((x, i) => {
             return (
               <button
-                key={i}
+                key={Math.random()}
                 onClick={() => {
                   setSize(i + 1);
                 }}
@@ -43,9 +43,10 @@ function Appearance() {
 
         <div className="positionSelector mb-4 pb-4">
           {mapper.map((item, y) => (
-            <div>
+            <div key={y}>
               {mapper.map((item, x) => (
                 <button
+                  key={x + 1 + y * 3}
                   value={x + 1 + y * 3}
                   className={`w-6 h-[15px] border mr-1 hover:bg-violet-50 ${
                     x + 1 + y * 3 === 1
@@ -88,7 +89,7 @@ function Appearance() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g clip-path="url(#clip0_79_9814)">
+              <g clipPath="url(#clip0_79_9814)">
                 <path
                   d="M28.5 7.5V28.5H7.5V7.5H28.5ZM28.5 4.5H7.5C5.85 4.5 4.5 5.85 4.5 7.5V28.5C4.5 30.15 5.85 31.5 7.5 31.5H28.5C30.15 31.5 31.5 30.15 31.5 28.5V7.5C31.5 5.85 30.15 4.5 28.5 4.5ZM21.21 17.79L16.71 23.595L13.5 19.71L9 25.5H27L21.21 17.79Z"
                   fill="#7D4AEA"

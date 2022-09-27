@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 function Content() {
   return (
-    <div className="mt-14 pt-14 mb-7">
+    <div className="mt-16 mb-7">
       <div className=" flex items-center gap-4 mb-4 pb-4">
         <span className="font-semibold bg-gray-200 w-9 h-9 flex justify-center items-center rounded-full">
           3
