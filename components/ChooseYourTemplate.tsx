@@ -12,7 +12,7 @@ function ChooseYourTemplate() {
         </span>
         <h3 className=" text-lg font-semibold">Choose your template</h3>
       </div>
-      <CardSelect />
+      <CardSelect activePage={activePage} />
       <div className="p-[3px] mt-7 bg-neutral-100 w-[8.25rem] rounded-xl mb-7">
         {Array.apply(0, Array(3)).map((x, i) => {
           return (

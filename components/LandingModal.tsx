@@ -32,12 +32,13 @@ function LandingModal() {
           placeholder="Email address"
           className="border border-[#BBBBBB] rounded-xl w-[18.75rem] h-12 p-4 mt-[1.87rem] mb-[0.93rem]"
         ></input>
-        <button className="bg-black text-white border rounded-xl w-[18.75rem] h-12 p-3 mb-5 ">
+        <button className="bg-black hover:bg-gray-700 text-white border rounded-xl w-[18.75rem] h-12 p-3 mb-5 ">
           Subscribe
         </button>
         <p className=" text-xs text-neutral-500 ">
-          By signing up, you agree to <u> Privacy Policy </u>and
-          <u> Terms of Use. </u>
+          By signing up, you agree to{' '}
+          <u className="hover:cursor-pointer"> Privacy Policy </u>and
+          <u className="hover:cursor-pointer"> Terms of Use. </u>
         </p>
       </div>
       <div className=" w-1/2 h-full relative ">
@@ -50,7 +51,7 @@ function LandingModal() {
           Mediterranean Sneakers<span className=" text-lg align-top">®</span>
         </p>
 
-        <button className=" absolute bg-white top-6 right-6 p-2 rounded-full">
+        <button className=" z-10 absolute bg-white top-6 right-6 p-2 rounded-full hover:bg-gray-200">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"

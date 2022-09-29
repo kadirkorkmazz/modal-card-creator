@@ -11,7 +11,7 @@ function Navbar() {
           <h1 className="text-l font-bold pl-2">modal.cards</h1>
         </div>
         <div className="flex items-center justify-start w-8/12">
-          <a href="#" className="flex items-center mx-5">
+          <a href="#" className="flex items-center mx-5 hover:text-blue-500">
             <h1 className="text-l font-medium">Solutions</h1>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -26,19 +26,19 @@ function Navbar() {
               />
             </svg>
           </a>
-          <a href="#" className="mx-5">
+          <a href="#" className="mx-5 hover:text-blue-500">
             <h1 className="text-l font-medium">Product Tour</h1>
           </a>
-          <a href="#" className="mx-5">
+          <a href="#" className="mx-5 hover:text-blue-500">
             <h1 className="text-l font-medium">Showcase</h1>
           </a>
-          <a href="#" className="mx-5">
+          <a href="#" className="mx-5 hover:text-blue-500">
             <h1 className="text-l font-medium">Pricing</h1>
           </a>
         </div>
         <div className="w-2/12">
-          <button className="p-2 m-1">Sign in</button>
-          <button className="bg-purple-600 text-white text-l rounded-xl px-4 py-1 shadow-[0_3px_7px_1px_rgba(125,74,234,0.2)] ml-3">
+          <button className="p-2 m-1 hover:text-blue-500">Sign in</button>
+          <button className="bg-purple-600 text-white text-l rounded-xl px-4 py-1 shadow-[0_3px_7px_1px_rgba(125,74,234,0.2)] ml-3 hover:bg-purple-800">
             Try for free
           </button>
         </div>

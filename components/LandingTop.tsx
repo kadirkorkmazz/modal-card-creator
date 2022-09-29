@@ -12,7 +12,7 @@ function LandingTop() {
         text-center and <br /> rotate-90 that can becomposed to build any
         design, directly in your markup.
       </p>
-      <button className="bg-purple-600 text-white text-l rounded-xl px-7 py-3 shadow-[0_4px_4px_rgba(0,0,0,0.25)] mb-16">
+      <button className="bg-purple-600 hover:bg-purple-800 text-white text-l rounded-xl px-7 py-3 shadow-[0_4px_4px_rgba(0,0,0,0.25)] mb-16">
         Try it out now
       </button>
       <div className="flex opacity-60">

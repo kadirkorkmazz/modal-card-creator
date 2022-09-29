@@ -19,7 +19,8 @@ function CardGeneratorModal() {
           Sign Up
         </button>
         <p className=" text-[10px] text-neutral-500">
-          By signing up, you agree to Privacy Policy
+          By signing up, you agree to{' '}
+          <strong className="hover:cursor-pointer">Privacy Policy</strong>
         </p>
       </div>
       <div className="w-[360px] h-full relative ">

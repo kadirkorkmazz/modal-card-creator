@@ -5,7 +5,14 @@ function Appearance() {
   const [size, setSize] = useState(2);
   const [position, setPosition] = useState(5);
   let mapper = [1, 2, 3];
-  const [color, setColor] = useState('black');
+  const [color, setColor] = useState('bg-black');
+  const colors = [
+    'bg-black',
+    'bg-orange-400',
+    'bg-neutral-500',
+    'bg-gray-300',
+    'bg-white',
+  ];
 
   return (
     <div className="flex items-start mt-16 mb-14">
@@ -73,11 +80,17 @@ function Appearance() {
         </div>
         <p className=" text-sm font-sans my-4">Colors</p>
         <div className="colors flex gap-4 mb-4 pb-4 ">
-          <div className=" w-[42px] h-[42px] rounded-[10px] border border-black border-opacity-30 hover:bg-opacity-80 hover:cursor-pointer bg-black "></div>
-          <div className=" w-[42px] h-[42px] rounded-[10px] border border-black border-opacity-30 hover:bg-opacity-80 hover:cursor-pointer bg-orange-400 "></div>
-          <div className=" w-[42px] h-[42px] rounded-[10px] border border-black border-opacity-30 hover:bg-opacity-80 hover:cursor-pointer bg-neutral-500 "></div>
-          <div className=" w-[42px] h-[42px] rounded-[10px] border border-black border-opacity-30 hover:bg-opacity-80 hover:cursor-pointer bg-gray-300 "></div>
-          <div className=" w-[42px] h-[42px] rounded-[10px] border border-black border-opacity-30 hover:bg-opacity-80 hover:cursor-pointer bg-white "></div>
+          {colors.map((item, i) => (
+            <button
+              key={i}
+              className={`w-[42px] h-[42px] rounded-[10px] border border-black border-opacity-30 hover:bg-opacity-80 hover:cursor-pointer ${item} ${
+                color === item ? ' ring-4' : ''
+              }`}
+              onClick={() => {
+                setColor(item);
+              }}
+            ></button>
+          ))}
         </div>
         <p className=" text-sm font-sans my-4">Upload Logo</p>
         <div className="uploadLogo w-[378px] h-[178px] border border-dashed border-gray-300 rounded-xl p-8 flex flex-col items-center justify-center gap-5 ">
