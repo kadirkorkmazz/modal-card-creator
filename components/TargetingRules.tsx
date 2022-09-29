@@ -1,7 +1,10 @@
 import React from 'react';
 import LanguageSelector from './utils/LanguageSelector';
+import { MainContext, useContext } from '../components/utils/context';
 
 function TargetingRules() {
+  const { targetingRules, setTargetingRules } = useContext(MainContext);
+
   return (
     <div className=" mt-16">
       <div className=" flex items-center gap-4 mb-4 pb-4">
@@ -22,6 +25,13 @@ function TargetingRules() {
             value=""
             id="small-toggle1"
             className="sr-only peer"
+            checked={targetingRules.visitorDevice}
+            onChange={(e) => {
+              setTargetingRules({
+                ...targetingRules,
+                visitorDevice: e.target.checked,
+              });
+            }}
           />
           <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-violet-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-violet-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-violet-600"></div>
         </label>
@@ -36,6 +46,14 @@ function TargetingRules() {
             id="desktopCheckbox"
             type="checkbox"
             className=" w-4 h-4  accent-violet-600 mr-2.5 peer cursor-pointer "
+            name="visitorDeviceType"
+            checked={targetingRules.visitorDeviceType === 'desktop'}
+            onChange={() => {
+              setTargetingRules({
+                ...targetingRules,
+                visitorDeviceType: 'desktop',
+              });
+            }}
           />
           <svg
             width="18"
@@ -62,6 +80,14 @@ function TargetingRules() {
             id="mobileCheckbox"
             type="checkbox"
             className=" w-4 h-4  accent-violet-600 mr-2.5 peer cursor-pointer"
+            name="visitorDeviceType"
+            checked={targetingRules.visitorDeviceType === 'mobile'}
+            onChange={() => {
+              setTargetingRules({
+                ...targetingRules,
+                visitorDeviceType: 'mobile',
+              });
+            }}
           />
           <svg
             width="18"
@@ -95,12 +121,29 @@ function TargetingRules() {
             value=""
             id="small-toggle2"
             className="sr-only peer"
+            checked={targetingRules.afterSecond}
+            onChange={(e) => {
+              setTargetingRules({
+                ...targetingRules,
+                afterSecond: e.target.checked,
+              });
+            }}
           />
           <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-violet-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-violet-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-violet-600"></div>
         </label>
       </div>
       <div>
-        <input className="w-[378px] h-9 border rounded-lg border-gray-300 px-3 py-2 text-sm"></input>
+        <input
+          className="w-[378px] h-9 border rounded-lg border-gray-300 px-3 py-2 text-sm"
+          type="number"
+          value={targetingRules.afterSecondValue}
+          onChange={(e) => {
+            setTargetingRules({
+              ...targetingRules,
+              afterSecondValue: e.target.value,
+            });
+          }}
+        ></input>
       </div>
       <div className="flex justify-between w-[378px] mt-4 pt-4 ">
         <h3 className=" text-sm font-semibold">After % Scroll</h3>
@@ -113,12 +156,29 @@ function TargetingRules() {
             value=""
             id="small-toggle3"
             className="sr-only peer"
+            checked={targetingRules.afterScroll}
+            onChange={(e) => {
+              setTargetingRules({
+                ...targetingRules,
+                afterScroll: e.target.checked,
+              });
+            }}
           />
           <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-violet-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-violet-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-violet-600"></div>
         </label>
       </div>
       <div>
-        <input className="w-[378px] h-9 border rounded-lg border-gray-300 px-3 py-2 text-sm"></input>
+        <input
+          className="w-[378px] h-9 border rounded-lg border-gray-300 px-3 py-2 text-sm"
+          type="number"
+          value={targetingRules.afterScrollValue}
+          onChange={(e) => {
+            setTargetingRules({
+              ...targetingRules,
+              afterScrollValue: e.target.value,
+            });
+          }}
+        ></input>
       </div>
       <div className="flex justify-between w-[378px] mt-4 pt-4 ">
         <h3 className=" text-sm font-semibold">Traffic Source</h3>
@@ -131,6 +191,13 @@ function TargetingRules() {
             value=""
             id="small-toggle4"
             className="sr-only peer"
+            checked={targetingRules.trafficSource}
+            onChange={(e) => {
+              setTargetingRules({
+                ...targetingRules,
+                trafficSource: e.target.checked,
+              });
+            }}
           />
           <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-violet-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-violet-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-violet-600"></div>
         </label>
@@ -139,6 +206,13 @@ function TargetingRules() {
         <input
           className="w-[378px] h-9 border rounded-lg border-gray-300 px-3 py-2 text-sm"
           placeholder="Enter your traffic source domain"
+          value={targetingRules.trafficSourceValue}
+          onChange={(e) => {
+            setTargetingRules({
+              ...targetingRules,
+              trafficSourceValue: e.target.value,
+            });
+          }}
         ></input>
       </div>
       <div className="flex justify-between w-[378px] mt-4 pt-4 ">
@@ -152,6 +226,13 @@ function TargetingRules() {
             value=""
             id="small-toggle5"
             className="sr-only peer"
+            checked={targetingRules.browserLanguage}
+            onChange={(e) => {
+              setTargetingRules({
+                ...targetingRules,
+                browserLanguage: e.target.checked,
+              });
+            }}
           />
           <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-violet-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-violet-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-violet-600"></div>
         </label>
@@ -168,6 +249,13 @@ function TargetingRules() {
             value=""
             id="small-toggle6"
             className="sr-only peer"
+            checked={targetingRules.exitIntentTargeting}
+            onChange={(e) => {
+              setTargetingRules({
+                ...targetingRules,
+                exitIntentTargeting: e.target.checked,
+              });
+            }}
           />
           <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-violet-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-violet-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-violet-600"></div>
         </label>

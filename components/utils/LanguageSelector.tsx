@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { MainContext, useContext } from './context';
 
 function LanguageSelector() {
+  const { selectedLanguages, setSelectedLanguages } = useContext(MainContext);
+
   const languages = [
     'English',
     'French',
@@ -19,16 +22,15 @@ function LanguageSelector() {
     'Arabic',
     'Hindi',
   ];
-  const [selectedLanguages, setSelectedLanguages] = useState([
-    'English',
-    'French',
-  ]);
+
   const [expanded, setExpanded] = useState(false);
 
   const toggleLang = (e: any) => {
     if (selectedLanguages.includes(e.target.value)) {
       setSelectedLanguages(
-        selectedLanguages.filter((language) => language !== e.target.value)
+        selectedLanguages.filter(
+          (language: string) => language !== e.target.value
+        )
       );
     } else {
       setSelectedLanguages([...selectedLanguages, e.target.value]);
@@ -37,7 +39,7 @@ function LanguageSelector() {
 
   const removeLang = (lang: any) => {
     setSelectedLanguages(
-      selectedLanguages.filter((language) => language !== lang)
+      selectedLanguages.filter((language: any) => language !== lang)
     );
   };
 
@@ -66,7 +68,7 @@ function LanguageSelector() {
                         Select
                       </p>
                     ) : (
-                      selectedLanguages.map((language) => (
+                      selectedLanguages.map((language: string) => (
                         <div
                           key={language}
                           className="z-10 flex items-center gap-1 pl-4 pr-3 bg-gray-100  min-w-24 h-full justify-between hover:border rounded-md text-black hover:bg-transparent hover:border-red-600 group hover:cursor-pointer"

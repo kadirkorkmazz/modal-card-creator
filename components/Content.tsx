@@ -1,7 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
+import { MainContext, useContext } from '../components/utils/context';
 
 function Content() {
+  const { contentInputs, setContentInputs } = useContext(MainContext);
+
   return (
     <div className="mt-16 mb-7">
       <div className=" flex items-center gap-4 mb-4 pb-4">
@@ -15,18 +18,46 @@ function Content() {
         <input
           placeholder="Sign Up"
           className="border h-9 w-[378px] border-gray-300 focus:border-violet-600 focus:outline-none rounded-lg px-3"
+          value={contentInputs.contentInput1}
+          onChange={(e) => {
+            setContentInputs({
+              ...contentInputs,
+              contentInput1: e.target.value,
+            });
+          }}
         ></input>
         <input
           placeholder="Enter your email"
           className="border h-9 w-[378px] border-gray-300 focus:border-violet-600 focus:outline-none rounded-lg px-3"
+          value={contentInputs.contentInput2}
+          onChange={(e) => {
+            setContentInputs({
+              ...contentInputs,
+              contentInput2: e.target.value,
+            });
+          }}
         ></input>
         <input
           placeholder="Sign Up"
           className="border h-9 w-[378px] border-gray-300 focus:border-violet-600 focus:outline-none rounded-lg px-3"
+          value={contentInputs.contentInput3}
+          onChange={(e) => {
+            setContentInputs({
+              ...contentInputs,
+              contentInput3: e.target.value,
+            });
+          }}
         ></input>
         <input
           placeholder="By singning up, you agree to Privacy Policy"
           className="border h-9 w-[378px] border-gray-300 focus:border-violet-600 focus:outline-none rounded-lg px-3"
+          value={contentInputs.contentInput4}
+          onChange={(e) => {
+            setContentInputs({
+              ...contentInputs,
+              contentInput4: e.target.value,
+            });
+          }}
         ></input>
       </div>
       <div>

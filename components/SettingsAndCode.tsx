@@ -1,6 +1,9 @@
 import React from 'react';
+import { MainContext, useContext } from '../components/utils/context';
 
 function SettingsAndCode() {
+  const { settingsAndCode, setSettingsAndCode } = useContext(MainContext);
+
   return (
     <div className="mt-14">
       <div>
@@ -20,29 +23,56 @@ function SettingsAndCode() {
         <input
           className="w-[378px] h-9 rounded-lg py-2 px-3 border mt-4"
           placeholder="Your Webhook URL"
+          value={settingsAndCode.webhook}
+          onChange={(e) => {
+            setSettingsAndCode({
+              ...settingsAndCode,
+              webhook: e.target.value,
+            });
+          }}
         ></input>
         <div className="flex items-center mt-4">
           <input
-            id="webhookCheckbox1"
+            id="sendFromSubmission"
             type="checkbox"
-            className=" w-4 h-4  accent-violet-600 mr-2.5 peer"
+            className=" w-4 h-4  accent-violet-600 mr-2.5 peer hover:cursor-pointer"
+            checked={settingsAndCode.sendFromSubmission}
+            onChange={(e) => {
+              setSettingsAndCode({
+                ...settingsAndCode,
+                sendFromSubmission: e.target.checked,
+              });
+            }}
           />
-          <label htmlFor="webhookCheckbox1" className="text-sm">
+          <label
+            htmlFor="sendFromSubmission"
+            className="text-sm hover:cursor-pointer"
+          >
             Send from submission
           </label>
         </div>
         <div className="flex items-center mt-4">
           <input
-            id="webhookCheckbox2"
+            id="sendClickData"
             type="checkbox"
-            className=" w-4 h-4  accent-violet-600 mr-2.5 peer"
+            className=" w-4 h-4  accent-violet-600 mr-2.5 peer hover:cursor-pointer"
+            checked={settingsAndCode.sendClickData}
+            onChange={(e) => {
+              setSettingsAndCode({
+                ...settingsAndCode,
+                sendClickData: e.target.checked,
+              });
+            }}
           />
-          <label htmlFor="webhookCheckbox2" className="text-sm">
+          <label
+            htmlFor="sendClickData"
+            className="text-sm hover:cursor-pointer"
+          >
             Send click data
           </label>
         </div>
         <div className="flex flex-col">
-          <button className="w-[184px] h-[60px] mb-8 bg-violet-600 rounded-xl text-lg text-white tracking-tight font-medium mt-12 shadow-[0px_5px_10px_2px_rgba(125,74,234,0.27)]">
+          <button className="w-[184px] h-[60px] mb-8 bg-violet-600 rounded-xl text-lg text-white tracking-tight font-medium mt-12 shadow-[0px_5px_10px_2px_rgba(125,74,234,0.27)] hover:bg-purple-800">
             Get your Code
           </button>
           <div className=" w-[378px] h-[260px] bg-zinc-800 rounded-lg relative flex p-4">
@@ -51,7 +81,7 @@ function SettingsAndCode() {
               value={`<script type="text/javascript" src="https://popupsmart.com/freechat.js"></script><script> window.start.init({ title: "Hi there :v:", message: "How may we help you? Just send us a message now to get assistance.", color: "#FA764F", position: "right", placeholder: "Enter your message", withText: "Write with", viaWhatsapp: "Or write us directly via Whatsapp", gty: "Go to your", awu: "and write us", connect: "Connect now", button: "Write us", device: "everywhere", services: [{"name":"whatsapp","content":null}]})aaa</script>`}
               onChange={() => {}}
             ></textarea>
-            <button className=" bg-violet-600 w-[129px] h-[30px] text-sm font-medium rounded-[160px] shadow-[0px_5px_10px_2px_rgba(125, 74, 234, 0.27)] absolute right-2.5 bottom-2.5">
+            <button className=" bg-violet-600 w-[129px] h-[30px] text-sm font-medium rounded-[160px] shadow-[0px_5px_10px_2px_rgba(125, 74, 234, 0.27)] absolute right-2.5 bottom-2.5 text-white hover:bg-purple-800">
               Copy the code
             </button>
           </div>

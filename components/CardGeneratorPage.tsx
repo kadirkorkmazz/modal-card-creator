@@ -1,5 +1,6 @@
 import React from 'react';
 import Appearance from './Appearance';
+import CardGeneratorModal from './CardGeneratorModal';
 import ChooseYourTemplate from './ChooseYourTemplate';
 import Content from './Content';
 import SettingsAndCode from './SettingsAndCode';
@@ -18,10 +19,18 @@ function CardGeneratorPage() {
           </p>
         </div>
         <ChooseYourTemplate />
-        <Appearance />
-        <Content />
-        <TargetingRules />
-        <SettingsAndCode />
+
+        <div className="flex">
+          <div>
+            <Appearance />
+            <Content />
+            <TargetingRules />
+            <SettingsAndCode />
+          </div>
+          <div>
+            <CardGeneratorModal />
+          </div>
+        </div>
       </div>
     </div>
   );

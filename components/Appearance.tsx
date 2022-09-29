@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CardGeneratorModal from './CardGeneratorModal';
+import { MainContext, useContext } from '../components/utils/context';
 
 function Appearance() {
-  const [size, setSize] = useState(2);
-  const [position, setPosition] = useState(5);
+  const { size, setSize, position, setPosition, color, setColor } =
+    useContext(MainContext);
+
   let mapper = [1, 2, 3];
-  const [color, setColor] = useState('bg-black');
   const colors = [
     'bg-black',
     'bg-orange-400',
@@ -67,7 +68,7 @@ function Appearance() {
                       : ''
                   } ${
                     position === x + 1 + y * 3
-                      ? 'bg-violet-600 border-none'
+                      ? 'bg-violet-600 border-none hover:bg-violet-700'
                       : 'bg-white'
                   }`}
                   onClick={(e) => {
@@ -136,9 +137,6 @@ function Appearance() {
             </p>
           </div>
         </div>
-      </div>
-      <div>
-        <CardGeneratorModal />
       </div>
     </div>
   );
