@@ -2,9 +2,10 @@ import React from 'react';
 import scaleSize, { colorPicker } from '../utils/funcs';
 import { MainContext, useContext } from '../utils/context';
 import cardData from '../../public/cardData.json';
+import Image from 'next/image';
 
 function Modal1() {
-  const { contentInputs, selectedCard } = useContext(MainContext);
+  const { contentInputs, selectedCard, uploadedLogo } = useContext(MainContext);
 
   const logo = cardData[selectedCard - 1].logo;
 
@@ -15,20 +16,24 @@ function Modal1() {
       <div
         className={` w-[90px] h-[90px] rounded-full ${colorPicker(
           'bg'
-        )} flex items-center justify-center border`}
+        )} flex items-center justify-center border relative`}
       >
-        <svg
-          width="36"
-          height="44"
-          viewBox="0 0 36 44"
-          fill="currentColor"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M23 23.18L24.8 30.94L18 26.84L11.2 30.94L13 23.2L7 18.02L14.92 17.34L18 10.04L21.08 17.32L29 18L23 23.18ZM18 4.38L32 10.6V20C32 29.04 26.04 37.38 18 39.86C9.96 37.38 4 29.04 4 20V10.6L18 4.38ZM18 0L0 8V20C0 31.1 7.68 41.48 18 44C28.32 41.48 36 31.1 36 20V8L18 0Z"
+        {uploadedLogo ? (
+          <Image src={uploadedLogo} layout="fill" className=" rounded-full" />
+        ) : (
+          <svg
+            width="36"
+            height="44"
+            viewBox="0 0 36 44"
             fill="currentColor"
-          />
-        </svg>
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M23 23.18L24.8 30.94L18 26.84L11.2 30.94L13 23.2L7 18.02L14.92 17.34L18 10.04L21.08 17.32L29 18L23 23.18ZM18 4.38L32 10.6V20C32 29.04 26.04 37.38 18 39.86C9.96 37.38 4 29.04 4 20V10.6L18 4.38ZM18 0L0 8V20C0 31.1 7.68 41.48 18 44C28.32 41.48 36 31.1 36 20V8L18 0Z"
+              fill="currentColor"
+            />
+          </svg>
+        )}
       </div>
 
       <h3 className=" text-3xl font-bold mt-7 mb-5">

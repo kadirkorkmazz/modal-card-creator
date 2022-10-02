@@ -19,7 +19,7 @@ const Home: NextPage = () => {
     'French',
   ]);
 
-  const [selectedCard, setSelectedCard] = useState<number>(2);
+  const [selectedCard, setSelectedCard] = useState<number>(1);
   const [size, setSize] = useState(0);
   const [position, setPosition] = useState(5);
   const [color, setColor] = useState('bg-violet-600');
