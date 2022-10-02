@@ -4,7 +4,7 @@ import scaleSize, { colorPicker } from '../utils/funcs';
 import { MainContext, useContext } from '../utils/context';
 
 function Modal2() {
-  const { contentInputs } = useContext(MainContext);
+  const { contentInputs, uploadedImage } = useContext(MainContext);
 
   return (
     <div
@@ -13,7 +13,11 @@ function Modal2() {
       <div className="w-[480px] h-[600px] flex flex-col">
         <div className="w-full h-[300px]rounded-xl ">
           <Image
-            src="https://images.unsplash.com/photo-1587377838789-968194a7cc88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2358&q=80"
+            src={
+              uploadedImage
+                ? uploadedImage
+                : `https://images.unsplash.com/photo-1587377838789-968194a7cc88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2358&q=80`
+            }
             alt="card"
             width={480}
             height={300}

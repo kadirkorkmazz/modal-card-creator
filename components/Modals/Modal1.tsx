@@ -1,9 +1,12 @@
 import React from 'react';
 import scaleSize, { colorPicker } from '../utils/funcs';
 import { MainContext, useContext } from '../utils/context';
+import cardData from '../../public/cardData.json';
 
 function Modal1() {
-  const { contentInputs } = useContext(MainContext);
+  const { contentInputs, selectedCard } = useContext(MainContext);
+
+  const logo = cardData[selectedCard - 1].logo;
 
   return (
     <div
@@ -18,7 +21,7 @@ function Modal1() {
           width="36"
           height="44"
           viewBox="0 0 36 44"
-          fill="none"
+          fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path

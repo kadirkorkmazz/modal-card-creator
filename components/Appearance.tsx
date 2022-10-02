@@ -93,29 +93,12 @@ function Appearance() {
             ></button>
           ))}
         </div>
+
+        {/*
+
         <p className=" text-sm font-sans my-4">Upload Logo</p>
         <div className="uploadLogo w-[378px] h-[178px] border border-dashed border-gray-300 rounded-xl p-8 flex flex-col items-center justify-center gap-5 ">
-          <div className=" w-20 h-20 bg-violet-600 bg-opacity-10 rounded-xl flex-shrink-0 flex items-center justify-center">
-            <svg
-              width="36"
-              height="36"
-              viewBox="0 0 36 36"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clipPath="url(#clip0_79_9814)">
-                <path
-                  d="M28.5 7.5V28.5H7.5V7.5H28.5ZM28.5 4.5H7.5C5.85 4.5 4.5 5.85 4.5 7.5V28.5C4.5 30.15 5.85 31.5 7.5 31.5H28.5C30.15 31.5 31.5 30.15 31.5 28.5V7.5C31.5 5.85 30.15 4.5 28.5 4.5ZM21.21 17.79L16.71 23.595L13.5 19.71L9 25.5H27L21.21 17.79Z"
-                  fill="#7D4AEA"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_79_9814">
-                  <rect width="36" height="36" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-          </div>
+          <div className=" w-20 h-20 bg-violet-600 bg-opacity-10 rounded-xl flex-shrink-0 flex items-center justify-center"></div>
           <div className="font-sans text-sm flex items-center gap-1">
             <svg
               width="18"
@@ -137,6 +120,8 @@ function Appearance() {
             </p>
           </div>
         </div>
+
+          */}
       </div>
     </div>
   );

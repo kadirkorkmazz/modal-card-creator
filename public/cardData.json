@@ -11,7 +11,9 @@
       "Code",
       "Cancel",
       "Continue"
-    ]
+    ],
+    "logo": "./Modal1Logo.svg",
+    "images": ""
   },
 
   {

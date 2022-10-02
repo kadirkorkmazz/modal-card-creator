@@ -19,7 +19,7 @@ const Home: NextPage = () => {
     'French',
   ]);
 
-  const [selectedCard, setSelectedCard] = useState<number>(1);
+  const [selectedCard, setSelectedCard] = useState<number>(2);
   const [size, setSize] = useState(0);
   const [position, setPosition] = useState(5);
   const [color, setColor] = useState('bg-violet-600');
@@ -36,6 +36,9 @@ const Home: NextPage = () => {
     contentInput10: '',
     contentInput11: '',
   });
+
+  const [uploadedImage, setUploadedImage] = useState<string>();
+  const [uploadedLogo, setUploadedLogo] = useState<string>();
 
   const [targetingRules, setTargetingRules] = useState({
     visitorDevice: false,
@@ -73,6 +76,10 @@ const Home: NextPage = () => {
     setTargetingRules,
     settingsAndCode,
     setSettingsAndCode,
+    uploadedImage,
+    setUploadedImage,
+    uploadedLogo,
+    setUploadedLogo,
   };
 
   // Defination of the context
