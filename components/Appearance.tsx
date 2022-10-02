@@ -1,5 +1,4 @@
 import React from 'react';
-import CardGeneratorModal from './CardGeneratorModal';
 import { MainContext, useContext } from '../components/utils/context';
 
 function Appearance() {
@@ -13,6 +12,7 @@ function Appearance() {
     'bg-neutral-500',
     'bg-gray-300',
     'bg-white',
+    'bg-violet-600',
   ];
 
   return (

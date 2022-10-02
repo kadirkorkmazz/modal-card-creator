@@ -1,11 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
+import scaleSize, { colorPicker } from '../utils/funcs';
 
-function CardGeneratorModal() {
+function Modal0() {
   return (
     <div className="sticky top-20">
-      <div className="w-[740px] h-[405px]  flex shadow-[0_5px_30px_rgba(0,0,0,0.15)] rounded-[30px] mt-16 ">
-        <div className="h-full w-[380px] rounded-l-[30px] flex flex-col gap-2.5 py-[3.75rem] px-10">
+      <div
+        className={`w-[740px] h-[405px]  flex shadow-[0_5px_30px_rgba(0,0,0,0.15)] rounded-[30px] ${scaleSize()}  `}
+      >
+        <div className=" h-full w-[380px] rounded-l-[30px] flex flex-col gap-2.5 py-[3.75rem] px-10 bg-white">
           <h5 className=" text-3xl font-semibold text-center">Sign Up</h5>
           <p className="text-center tracking-wider mb-5">Join new adventure</p>
           <input
@@ -16,7 +19,11 @@ function CardGeneratorModal() {
             placeholder="Enter your email"
             className="border w-[300px] h-11 rounded-lg border-[#dddddd] py-2.5 px-3 hover:border-gray-400   mb-[5px] mt-[5px]"
           ></input>
-          <button className=" w-[300px] h-11 bg-orange-400 text-white rounded-lg mb-[5px] hover:bg-opacity-90">
+          <button
+            className={` w-[300px] h-11 border rounded-lg mb-[5px] hover:bg-opacity-90 ${colorPicker(
+              'bg'
+            )} `}
+          >
             Sign Up
           </button>
           <p className=" text-[10px] text-neutral-500">
@@ -53,4 +60,4 @@ function CardGeneratorModal() {
   );
 }
 
-export default CardGeneratorModal;
+export default Modal0;

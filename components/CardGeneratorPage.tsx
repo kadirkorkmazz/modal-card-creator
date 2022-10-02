@@ -1,10 +1,11 @@
 import React from 'react';
 import Appearance from './Appearance';
-import CardGeneratorModal from './CardGeneratorModal';
 import ChooseYourTemplate from './ChooseYourTemplate';
 import Content from './Content';
+import ModalSelector from './Modals/ModalSelector';
 import SettingsAndCode from './SettingsAndCode';
 import TargetingRules from './TargetingRules';
+import { positionSelector } from './utils/funcs';
 
 function CardGeneratorPage() {
   return (
@@ -27,8 +28,10 @@ function CardGeneratorPage() {
             <TargetingRules />
             <SettingsAndCode />
           </div>
-          <div>
-            <CardGeneratorModal />
+          <div
+            className={`w-screen h-screen flex sticky top-0 ${positionSelector()}`}
+          >
+            <ModalSelector />
           </div>
         </div>
       </div>

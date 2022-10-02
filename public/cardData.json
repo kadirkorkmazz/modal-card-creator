@@ -2,18 +2,50 @@
   {
     "id": 1,
     "name": "card1",
-    "image": "./CardImg/card1.png"
+    "image": "./CardImg/card1.png",
+    "logoArea": true,
+    "imageArea": false,
+    "editableAreas": [
+      "Security Code",
+      "This code expires in 24 hours",
+      "Code",
+      "Cancel",
+      "Continue"
+    ]
   },
 
   {
     "id": 2,
     "name": "card2",
-    "image": "./CardImg/card2.png"
+    "image": "./CardImg/card2.png",
+    "logoArea": false,
+    "imageArea": true,
+    "editableAreas": [
+      "Install local now",
+      "We’ve gone native, try it!",
+      "Continue",
+      "Not Now"
+    ]
   },
   {
     "id": 3,
     "name": "card3",
-    "image": "./CardImg/card3.png"
+    "image": "./CardImg/card3.png",
+    "logoArea": false,
+    "imageArea": false,
+    "editableAreas": [
+      "PLANS",
+      "Choose best for you",
+      "Only pay for the capacity that you use.",
+      "Starter",
+      "1 free (then $15 per meember / month)",
+      "Pro",
+      "$19 per member/month",
+      "Business",
+      "$29 per member/month",
+      "Cancel",
+      "Continue"
+    ]
   },
 
   {

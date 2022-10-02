@@ -10,7 +10,6 @@ import LandingBottom from '../components/LandingBottom';
 import LandingTop from '../components/LandingTop';
 import Navbar from '../components/Navbar';
 import { MainContext } from '../components/utils/context';
-import ForCheckStates from '../components/utils/ForCheckStates';
 
 const Home: NextPage = () => {
   // Defination of the context
@@ -19,15 +18,23 @@ const Home: NextPage = () => {
     'English',
     'French',
   ]);
-  const [selectedCard, setSelectedCard] = useState(0);
-  const [size, setSize] = useState('medium');
+
+  const [selectedCard, setSelectedCard] = useState<number>(1);
+  const [size, setSize] = useState(0);
   const [position, setPosition] = useState(5);
-  const [color, setColor] = useState('bg-black');
+  const [color, setColor] = useState('bg-violet-600');
   const [contentInputs, setContentInputs] = useState({
     contentInput1: '',
     contentInput2: '',
     contentInput3: '',
     contentInput4: '',
+    contentInput5: '',
+    contentInput6: '',
+    contentInput7: '',
+    contentInput8: '',
+    contentInput9: '',
+    contentInput10: '',
+    contentInput11: '',
   });
 
   const [targetingRules, setTargetingRules] = useState({
@@ -84,8 +91,6 @@ const Home: NextPage = () => {
             />
           </Head>
           <main>
-            <ForCheckStates />
-
             <div className="  mx-auto bg-gradient-to-t from-[#E3F2F7] to-white h-[56.87rem]">
               <div className=" w-full max-w-screen-xl mt-4 bg-transparent mx-auto h-[56.87rem]">
                 <Navbar />
