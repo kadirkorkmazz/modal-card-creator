@@ -2,13 +2,14 @@ import React from 'react';
 import Image from 'next/image';
 import scaleSize, { colorPicker } from '../utils/funcs';
 import { MainContext, useContext } from '../utils/context';
+import { originSelector } from '../utils/funcs';
 
 function Modal2() {
   const { contentInputs, uploadedImage } = useContext(MainContext);
 
   return (
     <div
-      className={` bg-white border relative rounded-xl shadow-[0_5px_30px_rgba(0,0,0,0.15)] ${scaleSize()} `}
+      className={` bg-white border relative rounded-xl shadow-[0_5px_30px_rgba(0,0,0,0.15)] ${scaleSize()} ${originSelector()} `}
     >
       <div className="w-[480px] h-[600px] flex flex-col">
         <div className="w-full h-[300px]rounded-xl ">

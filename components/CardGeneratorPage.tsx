@@ -29,7 +29,7 @@ function CardGeneratorPage() {
             <SettingsAndCode />
           </div>
           <div
-            className={`w-screen h-screen flex sticky top-0 ${positionSelector()}`}
+            className={`w-screen h-[768px]  flex sticky top-5 bottom-5  ${positionSelector()}`}
           >
             <ModalSelector />
           </div>

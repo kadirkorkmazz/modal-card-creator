@@ -5,13 +5,13 @@ export function scaleSize() {
   const { size } = useContext(MainContext);
 
   if (size === 1) {
-    return 'scale-75';
+    return 'scale-[0.7]';
   }
   if (size === 2) {
-    return 'scale-100';
+    return 'scale-[0.85]';
   }
   if (size === 3) {
-    return 'scale-125';
+    return 'scale-100';
   }
 }
 
@@ -52,33 +52,53 @@ export function colorPicker(type: string) {
 
 export function positionSelector() {
   const { position } = useContext(MainContext);
+  switch (position) {
+    case 1:
+      return 'items-start justify-start';
+    case 2:
+      return 'items-start justify-center';
+    case 3:
+      return 'items-start justify-end';
+    case 4:
+      return 'items-center justify-start';
+    case 5:
+      return 'items-center justify-center';
+    case 6:
+      return 'items-center justify-end';
+    case 7:
+      return 'items-end justify-start';
+    case 8:
+      return 'items-end justify-center';
+    case 9:
+      return 'items-end justify-end';
+    default:
+      return 'items-center justify-center';
+  }
+}
 
-  if (position === 1 || position === 2 || position === 3) {
-    let pos =
-      position === 1
-        ? 'items-start justify-start'
-        : position === 2
-        ? 'items-start justify-center'
-        : 'items-start justify-end';
-    return pos;
-  }
-  if (position === 4 || position === 5 || position === 6) {
-    let pos =
-      position === 4
-        ? 'items-center justify-start'
-        : position === 5
-        ? 'items-center justify-center'
-        : 'items-center justify-end';
-    return pos;
-  }
-  if (position === 7 || position === 8 || position === 9) {
-    let pos =
-      position === 7
-        ? 'items-end justify-start'
-        : position === 8
-        ? 'items-end justify-center'
-        : 'items-end justify-end';
-    return pos;
+export function originSelector() {
+  const { position } = useContext(MainContext);
+  switch (position) {
+    case 1:
+      return 'origin-top-left';
+    case 2:
+      return 'origin-top';
+    case 3:
+      return 'origin-top-right';
+    case 4:
+      return 'origin-left';
+    case 5:
+      return 'origin-center';
+    case 6:
+      return 'origin-right';
+    case 7:
+      return 'origin-bottom-left';
+    case 8:
+      return 'origin-bottom';
+    case 9:
+      return 'origin-bottom-right';
+    default:
+      return 'origin-center';
   }
 }
 

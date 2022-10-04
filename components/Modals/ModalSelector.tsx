@@ -1,20 +1,25 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { MainContext, useContext } from '../utils/context';
-
-function loadComponent(id: number) {
-  const Component = React.lazy(() => import(`./Modal${id}.tsx`));
-  return Component;
-}
+import Modal1 from './Modal1';
+import Modal2 from './Modal2';
+import Modal3 from './Modal3';
 
 function ModalSelector() {
   const { selectedCard } = useContext(MainContext);
-  const Modal = loadComponent(selectedCard);
+
+  const card = {
+    1: Modal1,
+    2: Modal2,
+    3: Modal3,
+  };
+
+  let selectedCardNumber = selectedCard as keyof typeof card;
+
+  const Modal = card[selectedCardNumber];
 
   return (
     <div className={`w-[480px] h-[446px] rounded-[30px]`}>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Modal />
-      </Suspense>
+      <Modal />
     </div>
   );
 }
