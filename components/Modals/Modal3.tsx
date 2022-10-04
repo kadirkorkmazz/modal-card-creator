@@ -1,13 +1,14 @@
 import React from 'react';
 import { colorPicker, scaleSize } from '../utils/funcs';
 import { MainContext, useContext } from '../utils/context';
+import { originSelector } from '../utils/funcs';
 
 function Modal3() {
   const { contentInputs } = useContext(MainContext);
 
   return (
     <div
-      className={`bg-white border relative rounded-xl shadow-[0_5px_30px_rgba(0,0,0,0.15)] ${scaleSize()} font-sans`}
+      className={`bg-white border relative rounded-xl shadow-[0_5px_30px_rgba(0,0,0,0.15)] ${scaleSize()} font-sans ${originSelector()}`}
     >
       <div className="w-[480px] h-[549px] pt-12 px-14">
         <div>

@@ -3,6 +3,7 @@ import scaleSize, { colorPicker } from '../utils/funcs';
 import { MainContext, useContext } from '../utils/context';
 import cardData from '../../public/cardData.json';
 import Image from 'next/image';
+import { originSelector } from '../utils/funcs';
 
 function Modal1() {
   const { contentInputs, selectedCard, uploadedLogo } = useContext(MainContext);
@@ -11,7 +12,7 @@ function Modal1() {
 
   return (
     <div
-      className={`bg-white border relative py-10 px-16 flex flex-col items-center  font-sans rounded-xl shadow-[0_5px_30px_rgba(0,0,0,0.15)] ${scaleSize()}`}
+      className={`bg-white border relative py-10 px-16 flex flex-col items-center  font-sans rounded-xl shadow-[0_5px_30px_rgba(0,0,0,0.15)] ${scaleSize()} ${originSelector()} `}
     >
       <div
         className={` w-[90px] h-[90px] rounded-full ${colorPicker(

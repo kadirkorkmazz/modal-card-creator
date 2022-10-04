@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { MainContext, useContext } from './context';
 
 function LanguageSelector() {
-  const { selectedLanguages, setSelectedLanguages } = useContext(MainContext);
+  const { selectedLanguages, setSelectedLanguages, targetingRules } =
+    useContext(MainContext);
 
   const languages = [
     'English',
@@ -52,7 +53,13 @@ function LanguageSelector() {
   };
 
   return (
-    <div>
+    <div
+      className={`${
+        targetingRules.browserLanguage
+          ? ''
+          : 'pointer-events-none text-gray-300'
+      }`}
+    >
       <div className="flex flex-col gap-4">
         <form>
           <div className="multiselect">
@@ -71,7 +78,11 @@ function LanguageSelector() {
                       selectedLanguages.map((language: string) => (
                         <div
                           key={language}
-                          className="z-10 flex items-center gap-1 pl-4 pr-3 bg-gray-100  min-w-24 h-full justify-between hover:border rounded-md text-black hover:bg-transparent hover:border-red-600 group hover:cursor-pointer"
+                          className={`z-10 flex items-center gap-1 pl-4 pr-3 bg-gray-100  min-w-24 h-full justify-between hover:border rounded-md hover:bg-transparent hover:border-red-600 group hover:cursor-pointer ${
+                            targetingRules.browserLanguage
+                              ? 'text-black'
+                              : 'text-gray-400'
+                          }`}
                           onClick={() => removeLang(language)}
                         >
                           <p className="text-xs mr-0.5">{language}</p>
