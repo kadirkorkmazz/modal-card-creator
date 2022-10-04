@@ -82,4 +82,39 @@ export function positionSelector() {
   }
 }
 
+export function colorPickerVanilla(type: string) {
+  const { color } = useContext(MainContext);
+
+  if (color === 'bg-black') {
+    return type == 'bg'
+      ? ' backgroundColor:black; color:white;' //hover:bg-gray-800
+      : 'color:black;'; // hover:text-gray-800'
+  }
+  if (color === 'bg-white') {
+    return type == 'bg'
+      ? 'backgroundColor:white; color:black;' //hover:bg-gray-200 //
+      : 'color:white;'; // hover:text-gray-200
+  }
+  if (color === 'bg-violet-600') {
+    return type == 'bg'
+      ? 'backgroundColor:#7D4AEA; color:white;' //hover:bg-violet-700
+      : 'color:#7D4AEA; '; //hover:text-violet-700
+  }
+  if (color === 'bg-orange-400') {
+    return type == 'bg'
+      ? 'backgroundColor:#F37C34; color:white;' // hover:bg-orange-500 'backgroundColor:white; color:black;'
+      : 'color:#F37C34; '; //hover:text-orange-500
+  }
+  if (color === 'bg-neutral-500') {
+    return type == 'bg'
+      ? 'backgroundColor:#777777; color:white;' // hover:bg-neutral-600
+      : 'color:#777777; '; //hover:text-neutral-600
+  }
+  if (color === 'bg-gray-300') {
+    return type == 'bg'
+      ? 'backgroundColor:#DDDDDD; color:black; ' //hover:bg-gray-400
+      : 'color:#DDDDDD;'; // hover:text-gray-400
+  }
+}
+
 export default scaleSize;

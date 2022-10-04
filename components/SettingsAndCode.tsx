@@ -1,8 +1,23 @@
 import React from 'react';
 import { MainContext, useContext } from '../components/utils/context';
+import CodeCreator from './utils/codeCreator';
 
 function SettingsAndCode() {
-  const { settingsAndCode, setSettingsAndCode } = useContext(MainContext);
+  const { settingsAndCode, setSettingsAndCode, setShowCode } =
+    useContext(MainContext);
+
+  const handleCopy = (e: any) => {
+    navigator.clipboard.writeText(e.target.previousElementSibling.innerText);
+    e.target.innerText = 'Copied!';
+    setTimeout(() => {
+      e.target.innerText = 'Copy the code';
+    }, 2000);
+  };
+
+  const handleGetCode = (e: any) => {
+    setShowCode(true);
+    e.target.nextElementSibling.autoFocus = true;
+  };
 
   return (
     <div className="mt-14">
@@ -72,16 +87,20 @@ function SettingsAndCode() {
           </label>
         </div>
         <div className="flex flex-col">
-          <button className="w-[184px] h-[60px] mb-8 bg-violet-600 rounded-xl text-lg text-white tracking-tight font-medium mt-12 shadow-[0px_5px_10px_2px_rgba(125,74,234,0.27)] hover:bg-purple-800">
+          <button
+            className="w-[184px] h-[60px] mb-8 bg-violet-600 rounded-xl text-lg text-white tracking-tight font-medium mt-12 shadow-[0px_5px_10px_2px_rgba(125,74,234,0.27)] hover:bg-purple-800"
+            onClick={(e) => {
+              handleGetCode(e);
+            }}
+          >
             Get your Code
           </button>
           <div className=" w-[378px] h-[260px] bg-zinc-800 rounded-lg relative flex p-4">
-            <textarea
-              className=" w-full h-[188px] bg-transparent text-white text-xs font-roboto max-h-[188px]"
-              value={`<script type="text/javascript" src="https://popupsmart.com/freechat.js"></script><script> window.start.init({ title: "Hi there :v:", message: "How may we help you? Just send us a message now to get assistance.", color: "#FA764F", position: "right", placeholder: "Enter your message", withText: "Write with", viaWhatsapp: "Or write us directly via Whatsapp", gty: "Go to your", awu: "and write us", connect: "Connect now", button: "Write us", device: "everywhere", services: [{"name":"whatsapp","content":null}]})aaa</script>`}
-              onChange={() => {}}
-            ></textarea>
-            <button className=" bg-violet-600 w-[129px] h-[30px] text-sm font-medium rounded-[160px] shadow-[0px_5px_10px_2px_rgba(125, 74, 234, 0.27)] absolute right-2.5 bottom-2.5 text-white hover:bg-purple-800">
+            <CodeCreator />
+            <button
+              className=" bg-violet-600 w-[129px] h-[30px] text-sm font-medium rounded-[160px] shadow-[0px_5px_10px_2px_rgba(125, 74, 234, 0.27)] absolute right-2.5 bottom-2.5 text-white hover:bg-purple-800"
+              onClick={(e) => handleCopy(e)}
+            >
               Copy the code
             </button>
           </div>
