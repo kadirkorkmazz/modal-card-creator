@@ -5,6 +5,8 @@
     "image": "./CardImg/card1.png",
     "logoArea": true,
     "imageArea": false,
+    "customizable": true,
+    "codeAvailable": false,
     "editableAreas": [
       "Security Code",
       "This code expires in 24 hours",
@@ -22,6 +24,8 @@
     "image": "./CardImg/card2.png",
     "logoArea": false,
     "imageArea": true,
+    "customizable": true,
+    "codeAvailable": true,
     "editableAreas": [
       "Install local now",
       "We’ve gone native, try it!",
@@ -35,6 +39,8 @@
     "image": "./CardImg/card3.png",
     "logoArea": false,
     "imageArea": false,
+    "customizable": true,
+    "codeAvailable": false,
     "editableAreas": [
       "PLANS",
       "Choose best for you",
@@ -53,198 +59,264 @@
   {
     "id": 4,
     "name": "card4",
-    "image": "./CardImg/card4.png"
+    "image": "./CardImg/card4.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 5,
     "name": "card5",
-    "image": "./CardImg/card5.png"
+    "image": "./CardImg/card5.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 6,
     "name": "card6",
-    "image": "./CardImg/card6.png"
+    "image": "./CardImg/card6.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 7,
     "name": "card7",
-    "image": "./CardImg/card7.png"
+    "image": "./CardImg/card7.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 8,
     "name": "card8",
-    "image": "./CardImg/card8.png"
+    "image": "./CardImg/card8.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 9,
     "name": "card9",
-    "image": "./CardImg/card9.png"
+    "image": "./CardImg/card9.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 10,
     "name": "card10",
-    "image": "./CardImg/card10.png"
+    "image": "./CardImg/card10.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 11,
     "name": "card11",
-    "image": "./CardImg/card11.png"
+    "image": "./CardImg/card11.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 12,
     "name": "card12",
-    "image": "./CardImg/card12.png"
+    "image": "./CardImg/card12.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 13,
     "name": "card13",
-    "image": "./CardImg/card13.png"
+    "image": "./CardImg/card13.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 14,
     "name": "card14",
-    "image": "./CardImg/card14.png"
+    "image": "./CardImg/card14.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 15,
     "name": "card15",
-    "image": "./CardImg/card15.png"
+    "image": "./CardImg/card15.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 16,
     "name": "card16",
-    "image": "./CardImg/card16.png"
+    "image": "./CardImg/card16.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 17,
     "name": "card17",
-    "image": "./CardImg/card17.png"
+    "image": "./CardImg/card17.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 18,
     "name": "card18",
-    "image": "./CardImg/card18.png"
+    "image": "./CardImg/card18.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 19,
     "name": "card19",
-    "image": "./CardImg/card19.png"
+    "image": "./CardImg/card19.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 20,
     "name": "card20",
-    "image": "./CardImg/card20.png"
+    "image": "./CardImg/card20.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 21,
     "name": "card21",
-    "image": "./CardImg/card21.png"
+    "image": "./CardImg/card21.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 22,
     "name": "card22",
-    "image": "./CardImg/card22.png"
+    "image": "./CardImg/card22.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 23,
     "name": "card23",
-    "image": "./CardImg/card23.png"
+    "image": "./CardImg/card23.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 24,
     "name": "card24",
-    "image": "./CardImg/card24.png"
+    "image": "./CardImg/card24.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 25,
     "name": "card25",
-    "image": "./CardImg/card25.png"
+    "image": "./CardImg/card25.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 26,
     "name": "card26",
-    "image": "./CardImg/card26.png"
+    "image": "./CardImg/card26.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 27,
     "name": "card27",
-    "image": "./CardImg/card27.png"
+    "image": "./CardImg/card27.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 28,
     "name": "card28",
-    "image": "./CardImg/card28.png"
+    "image": "./CardImg/card28.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 29,
     "name": "card29",
-    "image": "./CardImg/card29.png"
+    "image": "./CardImg/card29.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 30,
     "name": "card30",
-    "image": "./CardImg/card30.png"
+    "image": "./CardImg/card30.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 31,
     "name": "card31",
-    "image": "./CardImg/card31.png"
+    "image": "./CardImg/card31.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 32,
     "name": "card32",
-    "image": "./CardImg/card32.png"
+    "image": "./CardImg/card32.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 33,
     "name": "card33",
-    "image": "./CardImg/card33.png"
+    "image": "./CardImg/card33.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 34,
     "name": "card34",
-    "image": "./CardImg/card34.png"
+    "image": "./CardImg/card34.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 35,
     "name": "card35",
-    "image": "./CardImg/card35.png"
+    "image": "./CardImg/card35.png",
+    "customizable": false,
+    "codeAvailable": false
   },
 
   {
     "id": 36,
     "name": "card36",
-    "image": "./CardImg/card36.png"
+    "image": "./CardImg/card36.png",
+    "customizable": false,
+    "codeAvailable": false
   }
 ]
