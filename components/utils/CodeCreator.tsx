@@ -17,7 +17,7 @@ function CodeCreator() {
     showCode,
   } = useContext(MainContext);
 
-  let code = `<script type="text/javascript" src="https://modal-card-creator-two.vercel.app/ModalsStatic/Modal2Static.js"></script><script> window.start.init({
+  let code = `<script type="text/javascript" src="https://modal-creator-page-kadir.vercel.app//ModalsStatic/Modal2Static.js"></script><script> window.start.init({
     contentImg: '${uploadedImage ? uploadedImage : ''}',
     title: ${JSON.stringify(contentInputs.contentInput1)},
     subtitle: ${JSON.stringify(contentInputs.contentInput2)},

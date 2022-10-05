@@ -2,7 +2,7 @@
 /* eslint-disable prefer-const */
 function Pop(params) {
   let cssRuleFile =
-    'https://modal-card-creator-two.vercel.app/ModalsStatic/Modal2StaticStyle.css';
+    'https://modal-creator-page-kadir.vercel.app/ModalsStatic/Modal2StaticStyle.css';
   let lnk = document.createElement('link');
   lnk.setAttribute('rel', 'stylesheet');
   lnk.setAttribute('type', 'text/css');
