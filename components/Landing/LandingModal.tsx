@@ -1,5 +1,5 @@
 import React from 'react';
-import landingModalImage from '../public/landing-modal-image.png';
+import landingModalImage from '../../public/landing-modal-image.png';
 import Image from 'next/image';
 import LandingModalShadow from './LandingModalShadow';
 

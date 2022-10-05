@@ -2,13 +2,13 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useState } from 'react';
 import CardGeneratorPage from '../components/CardGeneratorPage';
-import Faq from '../components/Faq';
-import Footer from '../components/Footer';
-import InfoGroup from '../components/InfoGroup';
-import InfoGroup2 from '../components/InfoGroup2';
-import LandingBottom from '../components/LandingBottom';
-import LandingTop from '../components/LandingTop';
-import Navbar from '../components/Navbar';
+import Faq from '../components/Landing/Faq';
+import Footer from '../components/Landing/Footer';
+import InfoGroup from '../components/Landing/InfoGroup';
+import InfoGroup2 from '../components/Landing/InfoGroup2';
+import LandingBottom from '../components/Landing/LandingBottom';
+import LandingTop from '../components/Landing/LandingTop';
+import Navbar from '../components/Landing/Navbar';
 import { MainContext } from '../components/utils/context';
 
 const Home: NextPage = () => {
