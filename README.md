@@ -12,6 +12,50 @@ React Context - Eslint - Prettier - Upload.js
 
 [🔴 Live Link](https://modal-creator-page-kadir.vercel.app/)
 
+
+## Kullanımı
+
+### Aşama 1: Choose your template
+
+Bu aşamada listelenen modallardan birini seçmeniz gerekiyor. (Şu an seçilebilir 3 modal, koda dökülebilir 1 modal var)
+
+### Aşama 2: Appearance
+
+Seçtiğiniz modalın;
+* boyutunu
+* ekrandaki pozisyonunu
+* rengini
+* varsa logosunu
+
+değiştirebilirsiniz
+
+### Aşama 3: Content
+
+Modalın içerdiği tüm yazıları ve varsa görselini değiştirebilirsiniz
+
+### Aşama 4: Targeting Rules
+
+* Visitor Device: Ziyaretçilerinizin cihaz tipini belirleyin. Kapalı olarak işaretlenirse tüm ziyaretçi türleri olarak seçilir.
+* After X Second: Modalınız girdiğiniz sürenin sonunda ekrana gelecektir.
+* After % Scroll: Modalınız ekranın girilen yüzdesi scroll edildiğinde aktif olacaktır.
+* Traffic Source: Modalınız sadece girilen adresten yönlendirilen ziyaretçilerin karşısına çıkacaktır.
+* *Browser Language: Ziyaretçilerin tarayıcı dillerini belirleyin. Seçilen dillere göre modal değişiklik gösterecektir.
+* Exit Intent Targeting: Modalınız, ziyaretçi sitenizden ayrılmak istediğinde aktif olur. (Mouse tarayıcının içerik alanının dışına çıktığında)
+
+  <sub> *Bu özellik henüz aktif değil. </sub>
+
+### Aşama 5: Settings and Code
+
+Bu aşamada girdiğiniz webhook adresine modalınızın ziyaretçi etkileşimleri ve ziyaretçilerin tarayıcı detayları gönderilir.
+
+<sub>Dil, tarih, saat, işletim sistemi, tarayıcı, tıklanan alanlar vs. </sub>
+
+Son aşamada tek yapmanız gereken "Get Your Code" butonuna basmak ve verilen kodu web sayfanızın body tagleri arasına yapıştırmak.
+
+Artık modalınız Aktif!
+
+
+
 ## Dağıtım
 
 Bu projeyi geliştirici modunda çalıştırmak için;
