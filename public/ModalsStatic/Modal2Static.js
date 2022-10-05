@@ -1,14 +1,48 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable prefer-const */
 function Pop(params) {
-  let cssRuleFile = 'tobechanged/cssfileofmodal2';
+  let cssRuleFile = 'cssrulefileurl';
   let lnk = document.createElement('link');
   lnk.setAttribute('rel', 'stylesheet');
   lnk.setAttribute('type', 'text/css');
   lnk.setAttribute('href', cssRuleFile);
   document.getElementsByTagName('head')[0].appendChild(lnk);
 
-  let clickData = [];
+  const userData = {
+    language: navigator.language,
+    url: window.location.href,
+    platform: navigator.userAgentData.platform,
+    browser: navigator.userAgentData.brands[0].brand,
+    browserVersion: navigator.userAgentData.brands[0].version,
+    device: navigator.userAgentData.mobile ? 'mobile' : 'desktop',
+    screen: window.screen.width + 'x' + window.screen.height,
+    colorDepth: window.screen.colorDepth,
+    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    languages: navigator.languages,
+    ISOdate: new Date().toISOString(),
+    referrer: document.referrer,
+    date:
+      new Date().getDate() +
+      '/' +
+      new Date().getMonth() +
+      '/' +
+      new Date().getFullYear(),
+    time:
+      new Date().getHours() +
+      ':' +
+      new Date().getMinutes() +
+      ':' +
+      new Date().getSeconds(),
+
+    userClicks: [],
+  };
+
+  function handleClickData(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    userData.userClicks.push(event.target.name);
+  }
+
   function positionSelector(position) {
     switch (position) {
       case 1:
@@ -58,14 +92,23 @@ function Pop(params) {
     }
   }
 
+  function handleWebhook(webhook) {
+    let webhookUrl =
+      'https://hook.eu1.make.com/njo3516th46728l1hy8s11ramf4htn1o';
+    if (webhookUrl) {
+      fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      });
+    }
+  }
+
   this.init = function (params) {
     let overlay = document.createElement('div');
     overlay.classList.add('overlay');
-
-    overlay.addEventListener('click', (e) => {
-      clickData.push(e.target);
-      console.log(clickData);
-    });
 
     let popup = document.createElement('div');
     popup.classList.add('popup');
@@ -91,14 +134,20 @@ function Pop(params) {
     let close = document.createElement('div');
     close.classList.add('close');
 
+    close.name = 'closeButton';
+
     document.body.appendChild(overlay);
     overlay.appendChild(popup);
     popup.appendChild(topContent);
     popup.appendChild(bottomContent);
     popup.appendChild(close);
 
-    bottomContent.innerHTML = `<h3>${params.title}</h3>
-    <p>${params.subtitle}</p> `;
+    bottomContent.innerHTML = `<h3>${
+      params.title !== '' ? params.title : 'Install local now'
+    }</h3>
+    <p>${
+      params.subtitle !== '' ? params.subtitle : 'We’ve gone native, try it!'
+    }</p> `;
 
     let button1 = document.createElement('button');
     let button2 = document.createElement('button');
@@ -106,29 +155,51 @@ function Pop(params) {
     button1.style.backgroundColor = params.backgroundColor;
     button1.style.color = params.color;
 
-    button1.innerHTML = params.button1;
-    button2.innerHTML = params.button2;
+    button1.innerText = params.button1 !== '' ? params.button1 : 'Continue';
+    button2.innerText = params.button2 !== '' ? params.button2 : 'Not Now';
+
+    button1.name = params.button1 !== '' ? params.button1 : 'Continue';
+    button2.name = params.button2 !== '' ? params.button2 : 'Not Now';
+
+    button1.addEventListener('click', (e) => {
+      handleClickData(e);
+      overlay.classList.remove('show');
+      overlay.classList.add('showed');
+      handleWebhook(params.webhook);
+    });
+
+    button2.addEventListener('click', (e) => {
+      handleClickData(e);
+    });
 
     bottomContent.appendChild(button1);
     bottomContent.appendChild(button2);
 
     close.innerHTML = `<svg
-    width="36"
-    height="36"
-    viewBox="0 0 36 36"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      opacity="0.4"
-      d="M18 3.00001C15.0333 3.00001 12.1332 3.87974 9.66645 5.52796C7.19972 7.17618 5.27713 9.51886 4.14181 12.2598C3.0065 15.0006 2.70945 18.0166 3.28823 20.9264C3.86701 23.8361 5.29562 26.5088 7.3934 28.6066C9.49119 30.7044 12.1639 32.133 15.0737 32.7118C17.9834 33.2906 20.9994 32.9935 23.7403 31.8582C26.4811 30.7229 28.8238 28.8003 30.472 26.3336C32.1203 23.8668 33 20.9667 33 18C33.0018 16.0297 32.6151 14.0783 31.8619 12.2576C31.1088 10.4369 30.004 8.78254 28.6107 7.3893C27.2175 5.99605 25.5632 4.89123 23.7424 4.13806C21.9217 3.38489 19.9704 2.99816 18 3.00001ZM18 30C15.6266 30 13.3066 29.2962 11.3332 27.9776C9.35977 26.6591 7.8217 24.7849 6.91345 22.5922C6.0052 20.3995 5.76756 17.9867 6.23058 15.6589C6.69361 13.3312 7.8365 11.193 9.51473 9.51473C11.193 7.8365 13.3312 6.69361 15.6589 6.23058C17.9867 5.76756 20.3995 6.0052 22.5922 6.91345C24.7849 7.8217 26.6591 9.35977 27.9776 11.3332C29.2962 13.3066 30 15.6266 30 18C29.9958 21.1813 28.7301 24.2311 26.4806 26.4806C24.2311 28.7301 21.1813 29.9958 18 30ZM23.385 10.5L18 15.885L12.615 10.5L10.5 12.615L15.885 18L10.5 23.385L12.615 25.5L18 20.115L23.385 25.5L25.5 23.385L20.115 18L25.5 12.615L23.385 10.5Z"
-      fill="black"
-    />
-  </svg>`;
+      width="36"
+      height="36"
+      viewBox="0 0 36 36"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      name="closeButton"
+      style="z-index: -1;"
 
-    close.addEventListener('click', () => {
+    >
+      <path
+        opacity="0.4"
+        d="M18 3.00001C15.0333 3.00001 12.1332 3.87974 9.66645 5.52796C7.19972 7.17618 5.27713 9.51886 4.14181 12.2598C3.0065 15.0006 2.70945 18.0166 3.28823 20.9264C3.86701 23.8361 5.29562 26.5088 7.3934 28.6066C9.49119 30.7044 12.1639 32.133 15.0737 32.7118C17.9834 33.2906 20.9994 32.9935 23.7403 31.8582C26.4811 30.7229 28.8238 28.8003 30.472 26.3336C32.1203 23.8668 33 20.9667 33 18C33.0018 16.0297 32.6151 14.0783 31.8619 12.2576C31.1088 10.4369 30.004 8.78254 28.6107 7.3893C27.2175 5.99605 25.5632 4.89123 23.7424 4.13806C21.9217 3.38489 19.9704 2.99816 18 3.00001ZM18 30C15.6266 30 13.3066 29.2962 11.3332 27.9776C9.35977 26.6591 7.8217 24.7849 6.91345 22.5922C6.0052 20.3995 5.76756 17.9867 6.23058 15.6589C6.69361 13.3312 7.8365 11.193 9.51473 9.51473C11.193 7.8365 13.3312 6.69361 15.6589 6.23058C17.9867 5.76756 20.3995 6.0052 22.5922 6.91345C24.7849 7.8217 26.6591 9.35977 27.9776 11.3332C29.2962 13.3066 30 15.6266 30 18C29.9958 21.1813 28.7301 24.2311 26.4806 26.4806C24.2311 28.7301 21.1813 29.9958 18 30ZM23.385 10.5L18 15.885L12.615 10.5L10.5 12.615L15.885 18L10.5 23.385L12.615 25.5L18 20.115L23.385 25.5L25.5 23.385L20.115 18L25.5 12.615L23.385 10.5Z"
+        fill="black"
+        name="closeButton"
+      />
+    </svg>`;
+
+    close.firstChild.name = 'closeButton';
+
+    close.addEventListener('click', (e) => {
+      handleClickData(e);
       overlay.classList.remove('show');
       overlay.classList.add('showed');
+      handleWebhook(params.webhook);
     });
 
     if (params.afterSeconds !== null) {
@@ -170,6 +241,16 @@ function Pop(params) {
       document.querySelector('.overlay').classList.contains('showed')
         ? null
         : document.querySelector('.overlay').classList.add('showed');
+    }
+
+    if (
+      params.afterScroll === null &&
+      params.afterSeconds === null &&
+      !params.exitIntent
+    ) {
+      document.querySelector('.overlay').classList.contains('showed')
+        ? null
+        : document.querySelector('.overlay').classList.add('show');
     }
   };
 }

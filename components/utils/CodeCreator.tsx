@@ -43,6 +43,14 @@ function CodeCreator() {
       targetingRules.trafficSource ? targetingRules?.trafficSourceValue : null
     },
     exitIntent: ${targetingRules?.exitIntentTargeting},
+
+    webhook: ${
+      settingsAndCode.webhook
+        ? JSON.stringify(settingsAndCode.webhook)
+        : JSON.stringify('')
+    },
+    sendFromSubmission: ${settingsAndCode.sendFromSubmission},
+    sendClickData: ${settingsAndCode.sendClickData},
     
   })</script>`;
 
