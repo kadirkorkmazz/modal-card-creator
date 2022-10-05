@@ -1,6 +1,6 @@
 import React from 'react';
 import { MainContext, useContext } from '../components/utils/context';
-import CodeCreator from './utils/codeCreator';
+import CodeCreator from './utils/CodeCreator';
 
 function SettingsAndCode() {
   const { settingsAndCode, setSettingsAndCode, setShowCode } =
