@@ -6,17 +6,16 @@ import { Upload } from 'upload-js';
 
 const upload = new Upload({ apiKey: 'free' });
 
-function UploadImage() {
+function UploadImage(): JSX.Element {
   const { selectedCard, setUploadedImage } = useContext(MainContext);
   const haveImage = cardData[selectedCard - 1].imageArea;
 
   const [imageSrc, setImageSrc] = useState<string>();
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  const handleChange = async () => {
+  const handleChange = async (): Promise<any> => {
     const file = inputRef.current?.files?.[0];
-    if (file?.name.match(/\.(jpg|jpeg|png|gif)$/)) {
-      console.log(file);
+    if (file?.name.match(/\.(jpg|jpeg|png|gif)$/) != null) {
       const reader = new FileReader();
       reader.onload = (e) => {
         setImageSrc(e.target?.result?.toString());
@@ -33,7 +32,7 @@ function UploadImage() {
 
   return (
     <>
-      <div className={`${haveImage ? 'block' : 'hidden'}`}>
+      <div className={`${haveImage ?? false ? 'block' : 'hidden'}`}>
         <p className="text-sm mb-4">Upload image</p>
         <label
           htmlFor="file"
@@ -41,7 +40,12 @@ function UploadImage() {
         >
           <div className=" w-[72px] h-20 flex-shrink-0 flex items-center justify-center relative ">
             <Image
-              src={imageSrc ? imageSrc : '/content-upload-image-mockimage.png'}
+              src={
+                imageSrc != null
+                  ? imageSrc
+                  : '/content-upload-image-mockimage.png'
+              }
+              alt="mock img"
               layout="fill"
             />
           </div>
@@ -65,7 +69,7 @@ function UploadImage() {
                   <input
                     ref={inputRef}
                     onChange={() => {
-                      handleChange();
+                      void handleChange();
                     }}
                     type="file"
                     name="file"

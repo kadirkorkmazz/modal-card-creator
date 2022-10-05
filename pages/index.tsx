@@ -13,15 +13,18 @@ import { MainContext } from '../components/utils/context';
 
 const Home: NextPage = () => {
   // Defination of the context
-  const [selectedLanguages, setSelectedLanguages] = useState([
-    'English',
-    'French',
-  ]);
 
   const [selectedCard, setSelectedCard] = useState<number>(2);
   const [size, setSize] = useState<number>(0);
   const [position, setPosition] = useState<number>(5);
   const [color, setColor] = useState<string>('bg-violet-600');
+  const [uploadedImage, setUploadedImage] = useState<string>('');
+  const [uploadedLogo, setUploadedLogo] = useState<string>('');
+  const [showCode, setShowCode] = useState(false);
+  const [selectedLanguages, setSelectedLanguages] = useState([
+    'English',
+    'French',
+  ]);
 
   const [contentInputs, setContentInputs] = useState({
     contentInput1: '',
@@ -37,48 +40,24 @@ const Home: NextPage = () => {
     contentInput11: '',
   });
 
-  const [uploadedImage, setUploadedImage] = useState<string>();
-  const [uploadedLogo, setUploadedLogo] = useState<string>();
-
-  interface ITargetingRules {
-    visitorDevice: boolean;
-    visitorDeviceType: string;
-    afterSecond: boolean;
-    afterSecondValue: number;
-    afterScroll: boolean;
-    afterScrollValue: number;
-    trafficSource: boolean;
-    trafficSourceValue: string;
-    browserLanguage: boolean;
-    exitIntentTargeting: boolean;
-  }
-
-  const [targetingRules, setTargetingRules] = useState<ITargetingRules>({
+  const [targetingRules, setTargetingRules] = useState({
     visitorDevice: true,
     visitorDeviceType: 'desktop',
     afterSecond: true,
     afterSecondValue: 12,
     afterScroll: true,
     afterScrollValue: 50,
-    trafficSource: true,
+    trafficSource: false,
     trafficSourceValue: '',
     browserLanguage: true,
     exitIntentTargeting: true,
   });
 
-  interface ISettingsAndCode {
-    webhook: string;
-    sendFromSubmission: boolean;
-    sendClickData: boolean;
-  }
-
-  const [settingsAndCode, setSettingsAndCode] = useState<ISettingsAndCode>({
+  const [settingsAndCode, setSettingsAndCode] = useState({
     webhook: '',
     sendFromSubmission: true,
     sendClickData: false,
   });
-
-  const [showCode, setShowCode] = useState(false);
 
   const data = {
     selectedLanguages,

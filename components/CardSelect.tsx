@@ -1,11 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import cardData from '../public/cardData.json';
 import { MainContext, useContext } from '../components/utils/context';
 
-function CardSelect(props: { activePage: number }) {
+function CardSelect(props: { activePage: number }): JSX.Element {
   const { selectedCard, setSelectedCard } = useContext(MainContext);
-  let pageLast = props.activePage * 12;
-  let pageFirst = pageLast - 12;
+  const pageLast = props.activePage * 12;
+  const pageFirst = pageLast - 12;
 
   return (
     <div className="cardSelect mt-8 gap-8 flex flex-wrap">

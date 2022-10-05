@@ -7,7 +7,7 @@ import SettingsAndCode from './SettingsAndCode';
 import TargetingRules from './TargetingRules';
 import { positionSelector } from './utils/funcs';
 
-function CardGeneratorPage() {
+function CardGeneratorPage(): JSX.Element {
   return (
     <div className=" w-full ">
       <div className="pageTotal mt-16">

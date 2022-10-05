@@ -1,10 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import scaleSize, { colorPicker } from '../utils/funcs';
+import { colorPicker, originSelector, scaleSize } from '../utils/funcs';
 import { MainContext, useContext } from '../utils/context';
-import { originSelector } from '../utils/funcs';
 
-function Modal2() {
+function Modal2(): JSX.Element {
   const { contentInputs, uploadedImage } = useContext(MainContext);
 
   return (
@@ -15,7 +14,7 @@ function Modal2() {
         <div className="w-full h-[300px]rounded-xl ">
           <Image
             src={
-              uploadedImage
+              uploadedImage !== ''
                 ? uploadedImage
                 : `https://images.unsplash.com/photo-1587377838789-968194a7cc88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2358&q=80`
             }

@@ -4,7 +4,7 @@ import Modal1 from './Modal1';
 import Modal2 from './Modal2';
 import Modal3 from './Modal3';
 
-function ModalSelector() {
+function ModalSelector(): JSX.Element {
   const { selectedCard } = useContext(MainContext);
 
   const card = {
@@ -13,7 +13,7 @@ function ModalSelector() {
     3: Modal3,
   };
 
-  let selectedCardNumber = selectedCard as keyof typeof card;
+  const selectedCardNumber = selectedCard as keyof typeof card;
 
   const Modal = card[selectedCardNumber];
 

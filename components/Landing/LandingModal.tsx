@@ -3,7 +3,7 @@ import landingModalImage from '../../public/landing-modal-image.png';
 import Image from 'next/image';
 import LandingModalShadow from './LandingModalShadow';
 
-function LandingModal() {
+function LandingModal(): JSX.Element {
   return (
     <div className=" w-[50rem] h-[29.25rem] flex font-poppins -mt-[14.18rem] absolute z-10">
       <div className=" w-1/2 bg-white h-full rounded-l-[2.5rem] flex flex-col items-center py-10 px-[3.12rem]  ">

@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useContext } from 'react';
 import { MainContext } from '../utils/context';
 
-export function scaleSize() {
+export function scaleSize(): string {
   const { size } = useContext(MainContext);
 
   if (size === 1) {
@@ -12,45 +13,49 @@ export function scaleSize() {
   }
   if (size === 3) {
     return 'scale-100';
+  } else {
+    return '';
   }
 }
 
-export function colorPicker(type: string) {
+export function colorPicker(type: string): string {
   const { color } = useContext(MainContext);
 
   if (color === 'bg-black') {
-    return type == 'bg'
+    return type === 'bg'
       ? 'bg-black text-white hover:bg-gray-800'
       : 'text-black hover:text-gray-800';
   }
   if (color === 'bg-white') {
-    return type == 'bg'
+    return type === 'bg'
       ? 'bg-white text-black hover:bg-gray-200'
       : 'text-white hover:text-gray-200';
   }
   if (color === 'bg-violet-600') {
-    return type == 'bg'
+    return type === 'bg'
       ? 'bg-violet-600 text-white hover:bg-violet-700'
       : 'text-violet-600 hover:text-violet-700';
   }
   if (color === 'bg-orange-400') {
-    return type == 'bg'
+    return type === 'bg'
       ? 'bg-orange-400 text-white hover:bg-orange-500'
       : 'text-orange-400 hover:text-orange-500';
   }
   if (color === 'bg-neutral-500') {
-    return type == 'bg'
+    return type === 'bg'
       ? 'bg-neutral-500 text-white hover:bg-neutral-600'
       : 'text-neutral-500 hover:text-neutral-600';
   }
   if (color === 'bg-gray-300') {
-    return type == 'bg'
+    return type === 'bg'
       ? 'bg-gray-300 text-black hover:bg-gray-400'
       : 'text-gray-300 hover:text-gray-400';
+  } else {
+    return '';
   }
 }
 
-export function positionSelector() {
+export function positionSelector(): string {
   const { position } = useContext(MainContext);
   switch (position) {
     case 1:
@@ -76,7 +81,7 @@ export function positionSelector() {
   }
 }
 
-export function originSelector() {
+export function originSelector(): string {
   const { position } = useContext(MainContext);
   switch (position) {
     case 1:
@@ -102,38 +107,40 @@ export function originSelector() {
   }
 }
 
-export function colorPickerVanilla(type: string) {
+export function colorPickerVanilla(type: string): string {
   const { color } = useContext(MainContext);
 
   if (color === 'bg-black') {
-    return type == 'bg'
-      ? ' backgroundColor:black; color:white;' //hover:bg-gray-800
+    return type === 'bg'
+      ? ' backgroundColor:black; color:white;' // hover:bg-gray-800
       : 'color:black;'; // hover:text-gray-800'
   }
   if (color === 'bg-white') {
-    return type == 'bg'
-      ? 'backgroundColor:white; color:black;' //hover:bg-gray-200 //
+    return type === 'bg'
+      ? 'backgroundColor:white; color:black;' // hover:bg-gray-200 //
       : 'color:white;'; // hover:text-gray-200
   }
   if (color === 'bg-violet-600') {
-    return type == 'bg'
-      ? 'backgroundColor:#7D4AEA; color:white;' //hover:bg-violet-700
-      : 'color:#7D4AEA; '; //hover:text-violet-700
+    return type === 'bg'
+      ? 'backgroundColor:#7D4AEA; color:white;' // hover:bg-violet-700
+      : 'color:#7D4AEA; '; // hover:text-violet-700
   }
   if (color === 'bg-orange-400') {
-    return type == 'bg'
+    return type === 'bg'
       ? 'backgroundColor:#F37C34; color:white;' // hover:bg-orange-500 'backgroundColor:white; color:black;'
-      : 'color:#F37C34; '; //hover:text-orange-500
+      : 'color:#F37C34; '; // hover:text-orange-500
   }
   if (color === 'bg-neutral-500') {
-    return type == 'bg'
+    return type === 'bg'
       ? 'backgroundColor:#777777; color:white;' // hover:bg-neutral-600
-      : 'color:#777777; '; //hover:text-neutral-600
+      : 'color:#777777; '; // hover:text-neutral-600
   }
   if (color === 'bg-gray-300') {
-    return type == 'bg'
-      ? 'backgroundColor:#DDDDDD; color:black; ' //hover:bg-gray-400
+    return type === 'bg'
+      ? 'backgroundColor:#DDDDDD; color:black; ' // hover:bg-gray-400
       : 'color:#DDDDDD;'; // hover:text-gray-400
+  } else {
+    return '';
   }
 }
 

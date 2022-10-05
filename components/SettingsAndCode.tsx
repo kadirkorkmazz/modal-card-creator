@@ -2,19 +2,19 @@ import React from 'react';
 import { MainContext, useContext } from '../components/utils/context';
 import CodeCreator from './utils/CodeCreator';
 
-function SettingsAndCode() {
+function SettingsAndCode(): JSX.Element {
   const { settingsAndCode, setSettingsAndCode, setShowCode, showCode } =
     useContext(MainContext);
 
-  const handleCopy = (e: any) => {
-    navigator.clipboard.writeText(e.target.previousSibling.innerText);
+  const handleCopy = (e: any): void => {
+    void navigator.clipboard.writeText(e.target.previousSibling.innerText);
     e.target.innerText = 'Copied!';
     setTimeout(() => {
       e.target.innerText = 'Copy the code';
     }, 2000);
   };
 
-  const handleGetCode = (e: any) => {
+  const handleGetCode = (e: any): void => {
     setShowCode(true);
     e.target.nextSibling.autoFocus = true;
   };
@@ -98,6 +98,7 @@ function SettingsAndCode() {
           <div className=" w-[378px] h-[260px] bg-zinc-800 rounded-lg relative flex p-4">
             <CodeCreator />
             <button
+              // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
               disabled={!showCode}
               className=" bg-violet-600 w-[129px] h-[30px] text-sm font-medium rounded-[160px] shadow-[0px_5px_10px_2px_rgba(125, 74, 234, 0.27)] absolute right-2.5 bottom-2.5 text-white hover:bg-purple-800 disabled:bg-gray-500 disabled:text-gray-400"
               onClick={(e) => handleCopy(e)}

@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+import React from 'react';
 import { MainContext, useContext } from './context';
 import cardData from '../../public/cardData.json';
 import { colorPickerVanilla } from './funcs';
 
-function CodeCreator() {
+function CodeCreator(): JSX.Element {
   const {
     size,
     position,
@@ -11,14 +12,13 @@ function CodeCreator() {
     targetingRules,
     settingsAndCode,
     uploadedImage,
-    uploadedLogo,
     selectedCard,
     selectedLanguages,
     showCode,
   } = useContext(MainContext);
 
-  let code = `<script type="text/javascript" src="https://modal-creator-page-kadir.vercel.app/ModalsStatic/Modal2Static.js"></script><script> window.start.init({
-    contentImg: '${uploadedImage ? uploadedImage : ''}',
+  const code = `<script type="text/javascript" src="https://modal-creator-page-kadir.vercel.app/ModalsStatic/Modal2Static.js"></script><script> window.start.init({
+    contentImg: ${JSON.stringify(uploadedImage)},
     title: ${JSON.stringify(contentInputs.contentInput1)},
     subtitle: ${JSON.stringify(contentInputs.contentInput2)},
     button1: ${JSON.stringify(contentInputs.contentInput3)},
@@ -26,7 +26,7 @@ function CodeCreator() {
     color: '${colorPickerVanilla('color')}',
     backgroundColor: '${colorPickerVanilla('bg')}',
     languages: ${
-      targetingRules.browserLanguage ? JSON.stringify(selectedLanguages) : false
+      targetingRules.browserLanguage ? JSON.stringify(selectedLanguages) : ''
     },
     position: ${position},
     size: ${size},
@@ -46,11 +46,7 @@ function CodeCreator() {
     },
     exitIntent: ${targetingRules?.exitIntentTargeting},
 
-    webhook: ${
-      settingsAndCode.webhook
-        ? JSON.stringify(settingsAndCode.webhook)
-        : JSON.stringify('')
-    },
+    webhook: ${JSON.stringify(settingsAndCode.webhook)},
     sendFromSubmission: ${settingsAndCode.sendFromSubmission},
     sendClickData: ${settingsAndCode.sendClickData},
     

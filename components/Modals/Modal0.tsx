@@ -1,9 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import scaleSize, { colorPicker } from '../utils/funcs';
-import { originSelector } from '../utils/funcs';
+import { scaleSize, colorPicker, originSelector } from '../utils/funcs';
 
-function Modal0() {
+function Modal0(): JSX.Element {
   return (
     <div className="sticky top-20">
       <div

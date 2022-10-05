@@ -1,7 +1,7 @@
 import React from 'react';
 import LandingModal from './LandingModal';
 
-function LandingBottom() {
+function LandingBottom(): JSX.Element {
   return (
     <div className="container mx-auto font-poppins ">
       <LandingModal />

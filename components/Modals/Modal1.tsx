@@ -1,14 +1,10 @@
 import React from 'react';
-import scaleSize, { colorPicker } from '../utils/funcs';
+import { colorPicker, originSelector, scaleSize } from '../utils/funcs';
 import { MainContext, useContext } from '../utils/context';
-import cardData from '../../public/cardData.json';
 import Image from 'next/image';
-import { originSelector } from '../utils/funcs';
 
-function Modal1() {
-  const { contentInputs, selectedCard, uploadedLogo } = useContext(MainContext);
-
-  const logo = cardData[selectedCard - 1].logo;
+function Modal1(): JSX.Element {
+  const { contentInputs, uploadedLogo } = useContext(MainContext);
 
   return (
     <div
@@ -19,8 +15,13 @@ function Modal1() {
           'bg'
         )} flex items-center justify-center border relative`}
       >
-        {uploadedLogo ? (
-          <Image src={uploadedLogo} layout="fill" className=" rounded-full" />
+        {uploadedLogo !== '' ? (
+          <Image
+            src={uploadedLogo}
+            layout="fill"
+            className=" rounded-full"
+            alt="uploaded logo"
+          />
         ) : (
           <svg
             width="36"

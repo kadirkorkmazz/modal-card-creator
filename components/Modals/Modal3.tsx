@@ -1,9 +1,8 @@
 import React from 'react';
-import { colorPicker, scaleSize } from '../utils/funcs';
+import { colorPicker, scaleSize, originSelector } from '../utils/funcs';
 import { MainContext, useContext } from '../utils/context';
-import { originSelector } from '../utils/funcs';
 
-function Modal3() {
+function Modal3(): JSX.Element {
   const { contentInputs } = useContext(MainContext);
 
   return (

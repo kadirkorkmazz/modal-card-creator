@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import logo from '../../public/Logo.svg';
 
-function Navbar() {
+function Navbar(): JSX.Element {
   return (
     <div className="container mx-auto font-sans">
       <div className="navbar flex items-center ">

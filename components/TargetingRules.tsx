@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import React from 'react';
 import LanguageSelector from './utils/LanguageSelector';
 import { MainContext, useContext } from '../components/utils/context';
 
-function TargetingRules() {
+function TargetingRules(): JSX.Element {
   const { targetingRules, setTargetingRules } = useContext(MainContext);
 
   return (
@@ -153,7 +154,7 @@ function TargetingRules() {
           onChange={(e) => {
             setTargetingRules({
               ...targetingRules,
-              afterSecondValue: e.target.value,
+              afterSecondValue: Number(e.target.value),
             });
           }}
         ></input>
@@ -189,7 +190,7 @@ function TargetingRules() {
           onChange={(e) => {
             setTargetingRules({
               ...targetingRules,
-              afterScrollValue: e.target.value,
+              afterScrollValue: Number(e.target.value),
             });
           }}
         ></input>
