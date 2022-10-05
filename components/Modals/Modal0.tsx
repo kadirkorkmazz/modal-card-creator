@@ -7,7 +7,7 @@ function Modal0() {
   return (
     <div className="sticky top-20">
       <div
-        className={`w-[740px] h-[405px]  flex shadow-[0_5px_30px_rgba(0,0,0,0.15)] rounded-[30px] ${scaleSize()} ${originSelector()}  `}
+        className={`w-[740px] h-[405px]  flex shadow-[0_5px_30px_rgba(0,0,0,0.15)] rounded-[30px] ${scaleSize()} ${originSelector()}  transition-all`}
       >
         <div className=" h-full w-[380px] rounded-l-[30px] flex flex-col gap-2.5 py-[3.75rem] px-10 bg-white">
           <h5 className=" text-3xl font-semibold text-center">Sign Up</h5>

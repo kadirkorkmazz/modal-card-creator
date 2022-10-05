@@ -9,7 +9,7 @@ function Modal2() {
 
   return (
     <div
-      className={` bg-white border relative rounded-xl shadow-[0_5px_30px_rgba(0,0,0,0.15)] ${scaleSize()} ${originSelector()} `}
+      className={` bg-white border relative rounded-xl shadow-[0_5px_30px_rgba(0,0,0,0.15)] ${scaleSize()} ${originSelector()} transition-all`}
     >
       <div className="w-[480px] h-[600px] flex flex-col">
         <div className="w-full h-[300px]rounded-xl ">

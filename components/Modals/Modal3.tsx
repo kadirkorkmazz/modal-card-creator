@@ -8,7 +8,7 @@ function Modal3() {
 
   return (
     <div
-      className={`bg-white border relative rounded-xl shadow-[0_5px_30px_rgba(0,0,0,0.15)] ${scaleSize()} font-sans ${originSelector()}`}
+      className={`bg-white border relative rounded-xl shadow-[0_5px_30px_rgba(0,0,0,0.15)] ${scaleSize()} font-sans ${originSelector()} transition-all`}
     >
       <div className="w-[480px] h-[549px] pt-12 px-14">
         <div>

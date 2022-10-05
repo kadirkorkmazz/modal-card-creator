@@ -3,11 +3,11 @@ import { MainContext, useContext } from '../components/utils/context';
 import CodeCreator from './utils/CodeCreator';
 
 function SettingsAndCode() {
-  const { settingsAndCode, setSettingsAndCode, setShowCode } =
+  const { settingsAndCode, setSettingsAndCode, setShowCode, showCode } =
     useContext(MainContext);
 
   const handleCopy = (e: any) => {
-    navigator.clipboard.writeText(e.target.previousElementSibling.innerText);
+    navigator.clipboard.writeText(e.target.previousSibling.innerText);
     e.target.innerText = 'Copied!';
     setTimeout(() => {
       e.target.innerText = 'Copy the code';
@@ -98,7 +98,8 @@ function SettingsAndCode() {
           <div className=" w-[378px] h-[260px] bg-zinc-800 rounded-lg relative flex p-4">
             <CodeCreator />
             <button
-              className=" bg-violet-600 w-[129px] h-[30px] text-sm font-medium rounded-[160px] shadow-[0px_5px_10px_2px_rgba(125, 74, 234, 0.27)] absolute right-2.5 bottom-2.5 text-white hover:bg-purple-800"
+              disabled={!showCode}
+              className=" bg-violet-600 w-[129px] h-[30px] text-sm font-medium rounded-[160px] shadow-[0px_5px_10px_2px_rgba(125, 74, 234, 0.27)] absolute right-2.5 bottom-2.5 text-white hover:bg-purple-800 disabled:bg-gray-500 disabled:text-gray-400"
               onClick={(e) => handleCopy(e)}
             >
               Copy the code

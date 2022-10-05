@@ -54,16 +54,16 @@ const Home: NextPage = () => {
   }
 
   const [targetingRules, setTargetingRules] = useState<ITargetingRules>({
-    visitorDevice: false,
-    visitorDeviceType: 'Desktop',
-    afterSecond: false,
+    visitorDevice: true,
+    visitorDeviceType: 'desktop',
+    afterSecond: true,
     afterSecondValue: 12,
-    afterScroll: false,
+    afterScroll: true,
     afterScrollValue: 50,
-    trafficSource: false,
+    trafficSource: true,
     trafficSourceValue: '',
-    browserLanguage: false,
-    exitIntentTargeting: false,
+    browserLanguage: true,
+    exitIntentTargeting: true,
   });
 
   interface ISettingsAndCode {
@@ -74,7 +74,7 @@ const Home: NextPage = () => {
 
   const [settingsAndCode, setSettingsAndCode] = useState<ISettingsAndCode>({
     webhook: '',
-    sendFromSubmission: false,
+    sendFromSubmission: true,
     sendClickData: false,
   });
 
