@@ -16,7 +16,7 @@ function SettingsAndCode() {
 
   const handleGetCode = (e: any) => {
     setShowCode(true);
-    e.target.nextElementSibling.autoFocus = true;
+    e.target.nextSibling.autoFocus = true;
   };
 
   return (

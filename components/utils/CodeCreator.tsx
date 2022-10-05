@@ -63,7 +63,9 @@ function CodeCreator() {
         (showCode ? ' ' : ' hidden')
       }
     >
-      {code}
+      {cardData[selectedCard - 1].codeAvailable
+        ? code
+        : 'This card does not have a code available'}
     </div>
   );
 }

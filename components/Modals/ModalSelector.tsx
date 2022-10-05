@@ -18,7 +18,7 @@ function ModalSelector() {
   const Modal = card[selectedCardNumber];
 
   return (
-    <div className={`w-[480px] h-[446px] rounded-[30px]`}>
+    <div className={` h-3/4 w-auto rounded-[30px]`}>
       <Modal />
     </div>
   );
