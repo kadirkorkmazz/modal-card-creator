@@ -15,11 +15,11 @@ React Context - Eslint - Prettier - Upload.js
 
 ## Kullanımı
 
-### Aşama 1: Choose your template
+### :small_orange_diamond: Aşama 1: Choose your template
 
 Bu aşamada listelenen modallardan birini seçmeniz gerekiyor. (Şu an seçilebilir 3 modal, koda dökülebilir 1 modal var)
 
-### Aşama 2: Appearance
+### :small_orange_diamond: Aşama 2: Appearance
 
 Seçtiğiniz modalın;
 * boyutunu
@@ -29,11 +29,11 @@ Seçtiğiniz modalın;
 
 değiştirebilirsiniz
 
-### Aşama 3: Content
+### :small_orange_diamond: Aşama 3: Content
 
 Modalın içerdiği tüm yazıları ve varsa görselini değiştirebilirsiniz
 
-### Aşama 4: Targeting Rules
+### :small_orange_diamond: Aşama 4: Targeting Rules
 
 * Visitor Device: Ziyaretçilerinizin cihaz tipini belirleyin. Kapalı olarak işaretlenirse tüm ziyaretçi türleri olarak seçilir.
 * After X Second: Modalınız girdiğiniz sürenin sonunda ekrana gelecektir.
@@ -44,7 +44,7 @@ Modalın içerdiği tüm yazıları ve varsa görselini değiştirebilirsiniz
 
   <sub> *Bu özellik henüz aktif değil. </sub>
 
-### Aşama 5: Settings and Code
+### :small_orange_diamond: Aşama 5: Settings and Code
 
 Bu aşamada girdiğiniz webhook adresine modalınızın ziyaretçi etkileşimleri ve ziyaretçilerin tarayıcı detayları gönderilir.
 
@@ -52,7 +52,7 @@ Bu aşamada girdiğiniz webhook adresine modalınızın ziyaretçi etkileşimler
 
 Son aşamada tek yapmanız gereken "Get Your Code" butonuna basmak ve verilen kodu web sayfanızın body tagleri arasına yapıştırmak.
 
-Artık modalınız Aktif!
+Artık modalınız Aktif! :tada: :tada:
 
 
 
