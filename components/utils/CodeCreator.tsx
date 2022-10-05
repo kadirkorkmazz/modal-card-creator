@@ -40,7 +40,9 @@ function CodeCreator() {
       targetingRules.afterScroll ? targetingRules?.afterScrollValue : null
     },
     trafficSource: ${
-      targetingRules.trafficSource ? targetingRules?.trafficSourceValue : null
+      targetingRules.trafficSource
+        ? JSON.stringify(targetingRules.trafficSourceValue)
+        : null
     },
     exitIntent: ${targetingRules?.exitIntentTargeting},
 
