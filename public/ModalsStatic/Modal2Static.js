@@ -9,7 +9,8 @@ function Pop(params) {
   lnk.setAttribute('href', cssRuleFile);
   document.getElementsByTagName('head')[0].appendChild(lnk);
 
-  const userData = {
+  let userClicks = [];
+  let userData = {
     language: navigator.language,
     url: window.location.href,
     platform: navigator.userAgentData.platform,
@@ -34,14 +35,12 @@ function Pop(params) {
       new Date().getMinutes() +
       ':' +
       new Date().getSeconds(),
-
-    userClicks: [],
   };
 
-  function handleClickData(event) {
+  function addClickData(event) {
     event.preventDefault();
     event.stopPropagation();
-    userData.userClicks.push(event.target.name);
+    userClicks.push(event.target.name);
   }
 
   function positionSelector(position) {
@@ -93,17 +92,28 @@ function Pop(params) {
     }
   }
 
-  function handleWebhook(webhook) {
+  function handleWebhook(webhook, submissionState, clickState) {
     let webhookUrl =
-      'https://hook.eu1.make.com/njo3516th46728l1hy8s11ramf4htn1o';
-    if (webhookUrl) {
-      fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userData),
-      });
+      webhook !== ''
+        ? webhook
+        : 'https://hook.eu1.make.com/njo3516th46728l1hy8s11ramf4htn1o';
+
+    if (submissionState) {
+      if (clickState) {
+        userData.userClicks = userClicks;
+
+        fetch(webhookUrl, {
+          method: 'POST',
+          body: JSON.stringify(userData),
+        });
+      } else {
+        fetch(webhookUrl, {
+          method: 'POST',
+          body: JSON.stringify(userData),
+        });
+      }
+    } else {
+      return null;
     }
   }
 
@@ -163,14 +173,18 @@ function Pop(params) {
     button2.name = params.button2 !== '' ? params.button2 : 'Not Now';
 
     button1.addEventListener('click', (e) => {
-      handleClickData(e);
+      addClickData(e);
       overlay.classList.remove('show');
       overlay.classList.add('showed');
-      handleWebhook(params.webhook);
+      handleWebhook(
+        params.webhook,
+        params.sendFromSubmission,
+        params.sendClickData
+      );
     });
 
     button2.addEventListener('click', (e) => {
-      handleClickData(e);
+      addClickData(e);
     });
 
     bottomContent.appendChild(button1);
@@ -197,10 +211,14 @@ function Pop(params) {
     close.firstChild.name = 'closeButton';
 
     close.addEventListener('click', (e) => {
-      handleClickData(e);
+      addClickData(e);
       overlay.classList.remove('show');
       overlay.classList.add('showed');
-      handleWebhook(params.webhook);
+      handleWebhook(
+        params.webhook,
+        params.sendFromSubmission,
+        params.sendClickData
+      );
     });
 
     if (params.afterSeconds !== null) {
