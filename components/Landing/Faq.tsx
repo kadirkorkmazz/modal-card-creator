@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-function Faq() {
+function Faq(): JSX.Element {
   const [selected, setSelected] = useState<number>(0);
 
-  const toggle = (i: number) => {
+  const toggle = (i: number): void => {
     if (selected === i) {
       return setSelected(0);
     }

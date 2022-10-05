@@ -7,15 +7,15 @@ import { Upload } from 'upload-js';
 
 const upload = new Upload({ apiKey: 'free' });
 
-function UploadLogo() {
+function UploadLogo(): JSX.Element {
   const { selectedCard, setUploadedLogo } = useContext(MainContext);
   const haveLogo = cardData[selectedCard - 1].logoArea;
   const logoInputRef = useRef<HTMLInputElement | null>(null);
   const [logoSrc, setLogoSrc] = useState<string>();
 
-  const handleChange = async () => {
+  const handleChange = async (): Promise<void> => {
     const file = logoInputRef.current?.files?.[0];
-    if (file?.name.match(/\.(jpg|jpeg|png|gif)$/)) {
+    if (file?.name.match(/\.(jpg|jpeg|png|gif)$/) != null) {
       console.log(file);
       const reader = new FileReader();
       reader.onload = (e) => {
@@ -32,7 +32,7 @@ function UploadLogo() {
   };
 
   return (
-    <div className={`${haveLogo ? 'block' : 'hidden'}`}>
+    <div className={`${haveLogo === true ? 'block' : 'hidden'}`}>
       <p className=" text-sm font-sans my-4">Upload Logo</p>
       <label
         htmlFor="logoFile"
@@ -40,8 +40,9 @@ function UploadLogo() {
       >
         <div className=" w-20 h-20 bg-violet-600 bg-opacity-10 rounded-xl flex-shrink-0 flex items-center justify-center relative">
           <Image
-            src={logoSrc ? logoSrc : defaultLogo}
-            layout={logoSrc ? 'fill' : 'fixed'}
+            src={logoSrc !== null && logoSrc !== '' ? logoSrc : defaultLogo}
+            layout={logoSrc !== null ? 'fill' : 'fixed'}
+            alt="logo"
           />
         </div>
 
@@ -52,7 +53,7 @@ function UploadLogo() {
               <input
                 ref={logoInputRef}
                 onChange={() => {
-                  handleChange();
+                  void handleChange();
                 }}
                 type="file"
                 name="logoFile"

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MainContext, useContext } from './context';
 
-function LanguageSelector() {
+function LanguageSelector(): JSX.Element {
   const { selectedLanguages, setSelectedLanguages, targetingRules } =
     useContext(MainContext);
 
@@ -26,7 +26,7 @@ function LanguageSelector() {
 
   const [expanded, setExpanded] = useState(false);
 
-  const toggleLang = (e: any) => {
+  const toggleLang = (e: any): void => {
     if (selectedLanguages.includes(e.target.value)) {
       setSelectedLanguages(
         selectedLanguages.filter(
@@ -38,13 +38,13 @@ function LanguageSelector() {
     }
   };
 
-  const removeLang = (lang: any) => {
+  const removeLang = (lang: any): void => {
     setSelectedLanguages(
       selectedLanguages.filter((language: any) => language !== lang)
     );
   };
 
-  const toggleAll = () => {
+  const toggleAll = (): void => {
     if (selectedLanguages.length === languages.length) {
       setSelectedLanguages([]);
     } else {

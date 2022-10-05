@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import React from 'react';
 import { MainContext, useContext } from '../components/utils/context';
 import cardData from '../public/cardData.json';
 import UploadImage from './utils/UploadImage';
 
-function Content() {
+function Content(): JSX.Element {
   const { contentInputs, setContentInputs, selectedCard } =
     useContext(MainContext);
 
@@ -20,23 +21,22 @@ function Content() {
       <div className="font-sans flex flex-col gap-4 mb-8">
         <p className=" text-sm">Edit Your Content</p>
 
-        {selectedCardAreas &&
-          selectedCardAreas.map((area, index) => {
-            return (
-              <input
-                key={index}
-                placeholder={area}
-                className="border h-9 w-[378px] border-gray-300 focus:border-violet-600 focus:outline-none rounded-lg px-3"
-                value={contentInputs[`contentInput${index + 1}`]}
-                onChange={(e) => {
-                  setContentInputs({
-                    ...contentInputs,
-                    [`contentInput${index + 1}`]: e.target.value,
-                  });
-                }}
-              ></input>
-            );
-          })}
+        {selectedCardAreas?.map((area, index) => {
+          return (
+            <input
+              key={index}
+              placeholder={area}
+              className="border h-9 w-[378px] border-gray-300 focus:border-violet-600 focus:outline-none rounded-lg px-3"
+              value={contentInputs[`contentInput${index + 1}`]}
+              onChange={(e) => {
+                setContentInputs({
+                  ...contentInputs,
+                  [`contentInput${index + 1}`]: e.target.value,
+                });
+              }}
+            ></input>
+          );
+        })}
       </div>
       <div>
         <UploadImage />

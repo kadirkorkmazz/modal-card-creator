@@ -14,8 +14,8 @@ interface IContext {
   setPosition: (position: number) => void;
   color: string;
   setColor: (color: string) => void;
-  contentInputs: IContentInputs;
-  setContentInputs: (contentInputs: IContentInputs) => void;
+  contentInputs: any;
+  setContentInputs: (contentInputs: any) => void;
   targetingRules: ITargetingRules;
   setTargetingRules: (targetingRules: ITargetingRules) => void;
   settingsAndCode: ISettingsAndCode;
@@ -39,20 +39,6 @@ interface ITargetingRules {
   trafficSourceValue: string;
   browserLanguage: boolean;
   exitIntentTargeting: boolean;
-}
-
-interface IContentInputs {
-  contentInput1: string;
-  contentInput2: string;
-  contentInput3: string;
-  contentInput4: string;
-  contentInput5: string;
-  contentInput6: string;
-  contentInput7: string;
-  contentInput8: string;
-  contentInput9: string;
-  contentInput10: string;
-  contentInput11: string;
 }
 
 interface ISettingsAndCode {

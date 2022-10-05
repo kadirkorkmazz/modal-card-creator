@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CardSelect from './CardSelect';
 
-function ChooseYourTemplate() {
+function ChooseYourTemplate(): JSX.Element {
   const [activePage, setActivePage] = useState(1);
 
   return (

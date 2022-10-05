@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Footer() {
+function Footer(): JSX.Element {
   return (
     <div className="mt-10 font-poppins flex flex-col items-center mb-20 container mx-auto">
       <svg

@@ -1,13 +1,12 @@
 import React from 'react';
 import { MainContext, useContext } from '../components/utils/context';
-import defaultLogo from '../public/defaultLogo.svg';
 import UploadLogo from './utils/UploadLogo';
 
-function Appearance() {
+function Appearance(): JSX.Element {
   const { size, setSize, position, setPosition, color, setColor } =
     useContext(MainContext);
 
-  let mapper = [1, 2, 3];
+  const mapper = [1, 2, 3];
   const colors = [
     'bg-black',
     'bg-orange-400',

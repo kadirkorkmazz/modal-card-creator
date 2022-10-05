@@ -1,6 +1,6 @@
 import React from 'react';
 
-function LandingTop() {
+function LandingTop(): JSX.Element {
   return (
     <div className="container mx-auto ">
       <h1 className="text-7xl font-semibold text-left pt-20 font-poppins leading-[5rem] mb-3">

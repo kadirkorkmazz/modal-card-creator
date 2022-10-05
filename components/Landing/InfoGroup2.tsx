@@ -1,6 +1,6 @@
 import React from 'react';
 
-function InfoGroup2() {
+function InfoGroup2(): JSX.Element {
   return (
     <div className="container mx-auto font-poppins mt-28 mb-10">
       <h1 className=" text-4xl font-semibold mb-12 text-center ">

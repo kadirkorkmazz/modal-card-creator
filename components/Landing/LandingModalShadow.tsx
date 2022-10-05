@@ -1,6 +1,6 @@
 import React from 'react';
 
-function LandingModalShadow() {
+function LandingModalShadow(): JSX.Element {
   return (
     <div className=" w-[31.25rem] h-[19.68rem] rounded-t-[2.5rem] absolute right-[-20.62rem] top-[-5.5rem] forGradientBG ">
       <div className="w-[11.37rem] h-12 bg-white rounded-xl flex text-center justify-center items-center z-10 absolute left-[7.12rem] bottom-[4.5rem]">
